@@ -2,14 +2,11 @@ import AuthManager from 'collegedesis/utils/auth_manager';
 
 var ApplicationRoute = Ember.Route.extend({
 
-
-  beforeModel: function() {
-    var authManager = AuthManager.create();
-    this.controller.set('authManager', authManager);
-    // TODO get session from somewhere
-  },
-
   setupController: function(controller) {
+    var authManager = AuthManager.create();
+    controller.set('authManager', authManager);
+    // TODO get session from somewhere
+
     this._loadStatData();
     this._loadCollegeDesis();
   },
