@@ -20,7 +20,7 @@ var LoginController = Ember.Controller.extend({
       };
 
       Ember.$.post('http://localhost:3000/v1/sessions', data, function(results) {
-        var authManager = this.get('controllers.application.authManager');
+        var authManager = self.get('controllers.application.authManager');
         authManager.authenticate(results.api_key.access_token, results.api_key.user_id);
         self.transitionToRoute('index');
       });
