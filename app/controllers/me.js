@@ -9,12 +9,13 @@ var MeController = Ember.ObjectController.extend({
       return mem.save();
     }
   },
-  numOfOrganizations: (function() {
+  numOfOrganizations: function() {
     return this.get('controllers.application.numOfOrganizations');
-  }).property('controllers.application.numOfOrganizations'),
-  setContent: (function() {
+  }.property('controllers.application.numOfOrganizations'),
+
+  setContent: function() {
     return this.set('content', this.get('controllers.application.currentUser'));
-  }).observes('controllers.application.currentUser')
+  }.observes('controllers.application.currentUser')
 });
 
 export default MeController;
