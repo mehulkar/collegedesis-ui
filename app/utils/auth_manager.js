@@ -27,13 +27,14 @@ var AuthManager = Ember.Object.extend({
 
     var store = App.__container__.lookup('store:main');
 
-    var user = store.find('user', userId);
-
-    var apiKey = ApiKey.create({
-      accessToken: accessToken,
-      user: user
+    var self = this;
+    var user = store.find('user', userId).then(function(user) {
+      var apiKey = ApiKey.create({
+        accessToken: accessToken,
+        user: user
+      });
+      self.set('apiKey', apiKey);
     });
-    this.set('apiKey', apiKey);
   },
 
   // Log out the user
