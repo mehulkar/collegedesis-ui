@@ -1,11 +1,12 @@
 var ApplicationController = Ember.Controller.extend({
+
   currentUser: function() {
-    return App.AuthManager.get('apiKey.user');
-  }.property('App.AuthManager.apiKey.user'),
+    return this.get('authManager.apiKey.user');
+  }.property('authManager.apiKey.user'),
 
   isSignedIn: function() {
-    return App.AuthManager.isAuthenticated();
-  }.property('App.AuthManager.apiKey.access_token'),
+    return this.get('authManager').isAuthenticated();
+  }.property('authManager.apiKey.access_token'),
 
   routeChanged: function() {
     if (!window._gaq) {

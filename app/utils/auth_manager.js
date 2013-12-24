@@ -38,7 +38,7 @@ var AuthManager = Ember.Object.extend({
 
   // Log out the user
   reset: function() {
-    App.__container__.lookup("route:application").transitionTo('sessions.new');
+    App.__container__.lookup("controller:application").transitionToRoute('index');
     Ember.run.sync();
     Ember.run.next(this, function(){
       this.set('apiKey', null);
@@ -64,7 +64,8 @@ var AuthManager = Ember.Object.extend({
 // Reset the authentication if any ember data request returns a 401 unauthorized error
 DS.rejectionHandler = function(reason) {
   if (reason.status === 401) {
-    App.AuthManager.reset();
+    var authManager = App.__container__.lookup('controller:application').get('authManager');
+    authManager.reset();
   }
   throw reason;
 };

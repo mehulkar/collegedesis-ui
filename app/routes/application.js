@@ -4,8 +4,9 @@ var ApplicationRoute = Ember.Route.extend({
 
 
   beforeModel: function() {
-    App.AuthManager = AuthManager.create();
-    console.log('get session from somewhere');
+    var authManager = AuthManager.create();
+    this.controller.set('authManager', authManager);
+    // TODO get session from somewhere
   },
 
   setupController: function(controller) {
