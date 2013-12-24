@@ -1,5 +1,6 @@
 var MeController = Ember.ObjectController.extend({
-  needs: ['dIndex', 'application'],
+  needs: ['application'],
+
   deleteMembership: function(mem) {
     var org;
     org = mem.get('organization.name');
