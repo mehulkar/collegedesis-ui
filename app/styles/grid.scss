@@ -1,0 +1,44 @@
+@import '_imports';
+
+.page, .footer {
+  max-width: $col * 23;
+}
+
+.page {
+  margin: 36px 50px 0 210px;
+  padding: 10px;
+}
+
+.main-inside-container {
+  width: 65%;
+  min-height: 410px;
+  padding: 0 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+.index {
+  background-color: darken($background, 3%);
+  padding: 10px;
+  min-width: 150px;
+  width: 35%;
+  p { margin-bottom: 8.8px; }
+  .inline {
+    height: 35px;
+  }
+}
+
+.bulletins-list {
+  max-height: 430px;
+  overflow: auto;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}

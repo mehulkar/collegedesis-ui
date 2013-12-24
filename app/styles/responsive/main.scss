@@ -1,0 +1,140 @@
+@import '../_imports';
+
+@media screen and (max-width: 600px) {
+  .page {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .main-inside-container {
+    min-height: 290px;
+  }
+  nav .logo { display: none; }
+  .page {
+    .index {
+      text-align: center;
+      margin-bottom: 40px;
+      p { margin-bottom: 8.8px; }
+      hr {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    & > * {
+      width: 100%;
+      max-width: 100%;
+      padding: 0 10px;
+      float: none;
+      display: block;
+    }
+  }
+
+  body, p, nav,
+  .page > *, .footer {
+    width: 100%;
+  }
+}
+
+/* iPhone < 5 Media Query */
+@media screen and (device-aspect-ratio: 2/3) {
+  .page {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .main-inside-container {
+    min-height: 290px;
+  }
+  nav .logo { display: none; }
+  .page {
+    .index {
+      text-align: center;
+      margin-bottom: 40px;
+      p { margin-bottom: 8.8px; }
+      hr {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    & > * {
+      width: 100%;
+      max-width: 100%;
+      padding: 0 10px;
+      float: none;
+      display: block;
+    }
+  }
+
+  body, p, nav,
+  .page > *, .footer {
+    width: 100%;
+  }
+}
+
+/* iPhone 5 Media Query */
+@media screen and (device-aspect-ratio: 40/71) {
+  .page {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .main-inside-container {
+    min-height: 290px;
+  }
+  nav .logo { display: none; }
+  .page {
+    .index {
+      text-align: center;
+      margin-bottom: 40px;
+      p { margin-bottom: 8.8px; }
+      hr {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    & > * {
+      width: 100%;
+      max-width: 100%;
+      padding: 0 10px;
+      float: none;
+      display: block;
+    }
+  }
+
+  body, p, nav,
+  .page > *, .footer {
+    width: 100%;
+  }
+}
+
+/* iPad 5 Media Query */
+@media screen and (device-aspect-ratio: 3/4) {
+  .page {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .main-inside-container {
+    min-height: 290px;
+  }
+  nav .logo { display: none; }
+  .page {
+    .index {
+      text-align: center;
+      margin-bottom: 40px;
+      p { margin-bottom: 8.8px; }
+      hr {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    & > * {
+      width: 100%;
+      max-width: 100%;
+      padding: 0 10px;
+      float: none;
+      display: block;
+    }
+  }
+
+  body, p, nav,
+  .page > *, .footer {
+    width: 100%;
+  }
+}

@@ -1,0 +1,37 @@
+<div class="index left">
+  <h3>Memberships</h3>
+  <div {{bind-attr class=":info loading"}}>
+    {{#unless memberships}}
+      {{#unless newApplications}}
+        <p class="small muted">To get your account approved, join one of the {{numOfOrganizations}} organizations in our {{#link-to 'directory'}}Directory{{/link-to}}!</p>
+      {{/unless}}
+    {{/unless}}
+    <ul class="memberships">
+      {{#each mem in memberships}}
+        <li {{bind-attr class="mem.notApproved mem.loading:loading"}}>
+          <i {{action deleteMembership mem}} class="icon-remove-circle"></i>
+          {{#link-to 'd.show' mem.organization tagName="div"}}
+            {{mem.displayName}}
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+    <ul class="memberships">
+      {{#each app in pendingMembershipApplications}}
+        <li>Applied to {{app.organization.displayName}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+<div class="main-inside-container left profile-page">
+  <div class="profile-head">
+    <img {{bind-attr src="imageUrl"}}>
+    <h1>{{fullName}}</h1>
+  </div>
+  <p class="muted">
+    There isn't a whole lot to do on your profile page yet.
+  </p>
+  <p class="small muted">
+    We are building a kick ass social network for South Asian student organizations, so the focus is on {{#link-to 'directory'}}organizational profiles{{/link-to}}. Don't worry though, we'll let you add Twitbook and Instachat links and all that good stuff soon though.
+  </p>
+</div>

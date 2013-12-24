@@ -1,0 +1,56 @@
+@import '_imports';
+
+.memberships {
+  margin-bottom: 10px;
+  ul li {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    img {
+      float: left;
+      margin-right: 15px;
+      height: 40px;
+    }
+  }
+}
+
+.activity {
+  li {
+    a {
+      width: 100%;
+      display: block;
+      @include ellipsis;
+      color: $brown3;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+body .links {
+  & > * { display: inline-block; margin-right: 10px;}
+  i { color: #ccc; }
+  a {
+    i { color: $brown4; }
+  }
+}
+
+.about {
+  max-height: 200px;
+  overflow: scroll;
+  border-bottom: solid 1px $brown2;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  font-size: $font-size * 0.9;
+  color: lighten($brown4, 30%);
+  &.editable {
+    @include editable;
+    resize: vertical;
+  }
+  p {
+    margin-bottom: $font-size * 0.9 * 1.30;
+    line-height: $font-size * 0.9 * 1.30;
+
+  }
+}

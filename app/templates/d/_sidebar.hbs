@@ -1,0 +1,35 @@
+<div class="index left">
+  {{#if isEditing}}
+    {{textarea classNames="about editable" value=about}}
+  {{else}}
+    <div class="about">{{markdown about}}</div>
+  {{/if}}
+
+  <table class="left-heading">
+    <tr>
+      <td>Reputation</td>
+      <td>{{reputation}}</td>
+    </tr>
+    <tr>
+      <td>Members</td>
+      <td>{{memberships.length}}</td>
+    </tr>
+    {{#if currentUser}}
+      <tr>
+        <td>You</td>
+        <td>{{currentUserStatus}}</td>
+      </tr>
+    {{/if}}
+  </table>
+  {{#if currentUserIsMember}}
+    {{#if pendingAdminApplication}}
+      <p>You applied to be an administrator. Awaiting verification!</p>
+    {{else}}
+      {{#unless currentUserIsAdmin}}
+        <a {{action applyAdmin}} class="cta">Claim Admin</a>
+      {{/unless}}
+    {{/if}}
+  {{else}}
+    <a {{action applyMembership}} class="cta">Join</a>
+  {{/if}}
+</div>

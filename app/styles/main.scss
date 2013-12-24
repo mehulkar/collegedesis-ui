@@ -1,0 +1,373 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0;
+  zoom: 1;
+  vertical-align: baseline;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'), url(http://themes.googleusercontent.com/static/fonts/notosans/v1/LeFlHvsZjXu2c3ZRgBq9nLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Port Lligat Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Port Lligat Slab'), local('PortLligatSlab-Regular'), url(http://themes.googleusercontent.com/static/fonts/portlligatslab/v2/CUEdhRk7oC7up0p6t0g4PzsubemXTgcCsqFGmxQzGDk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Snippet';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Snippet'), url(http://themes.googleusercontent.com/static/fonts/snippet/v3/fAP-E0beNC7crLbNRC9S7QLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
+
+@import '_imports';
+
+p, li {
+  margin-bottom: $font-size * 1.30;
+  line-height: $font-size * 1.30;
+}
+
+.small {
+  font-size: $font-size * 0.9;
+  margin-bottom: $font-size * 0.9 * 1.30;
+  line-height: $font-size * 0.9 * 1.30;
+}
+
+.muted {
+  color: lighten($brown4, 30%);
+}
+
+h5.subtitle {
+  font-family: $font;
+  color: $brown4;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, $brown4, transparentize($brown4, 0.9));
+  background-image:    -moz-linear-gradient(left, $brown4, transparentize($brown4, 0.9));
+  background-image:     -ms-linear-gradient(left, $brown4, transparentize($brown4, 0.9));
+  background-image:      -o-linear-gradient(left, $brown4, transparentize($brown4, 0.9));
+  width: 60%;
+  margin-top: 30px;
+  margin-bottom: $font-size * 0.5;
+}
+
+strong {
+  font-weight: 800;
+  letter-spacing: -1px;
+  background-color: transparentize($green, 0.7);
+  padding: 0 3px;
+  border-radius: 5px;
+}
+
+h1.center {
+  font-size: $font-size * 3;
+}
+
+h2.center {
+  @include heading;
+  color: $brown4;
+}
+
+.center {
+  text-align: center;
+  width: 60%;
+  margin: 10px auto;
+}
+
+.inline {
+  & > * {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    height: 32px;
+  }
+}
+
+ul li { list-style-type: none; }
+
+body {
+  margin: 0 auto;
+  background-color: $background;
+}
+
+/* Typography */
+body {
+  font-size:$font-size;
+  font-family: $font;
+  color: $brown4;
+  a {
+    text-decoration:none;
+    color: $link-color;
+    cursor:pointer;
+  }
+}
+
+nav .logo {
+  width: 210px;
+  padding: 0 20px;
+}
+
+.page {
+  box-shadow: 0 0 3px 1px #aaa;
+}
+
+.logo {
+  font-family: $logo-font;
+  cursor: pointer;
+  color: $brown3;
+  span {
+    color: $brown2;
+    text-shadow: 1px 1px $brown3;
+  }
+}
+
+.index .logo {
+  font-size: $font-size * 2.2;
+  cursor: auto;
+  margin-top: 15px;
+}
+
+.info.loading { @include loader(200px); }
+
+input, textarea, select {
+  width: 100%;
+  max-width: 500px;
+}
+
+@mixin input {
+  box-shadow: 0 0 3px #333;
+  outline: none;
+  border: none;
+  background-color: transparentize($brown2, 0.9);
+}
+
+input, textarea {
+  @include input;
+}
+
+.input-wrapper {
+  @include input;
+  width: 100%;
+  .search {
+    background: url('search.svg') center no-repeat;
+    background-size: 80%;
+    width: 30px;
+    height: 30px;
+  }
+  .icon, input {
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+  }
+  input {
+    width: 80%;
+    text-align: left;
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+  }
+}
+
+input, textarea, select {
+  padding:5px;
+  box-sizing:border-box;
+  font-size: $font-size * 1.1;
+  display: block;
+}
+
+.button {
+  @include clickable-button(150px);
+}
+
+input[type='submit'], button {
+  font-size: $font-size * 1.1;
+  @include clickable-button(75px);
+  &[disabled] {}
+}
+
+h1 { font-size: $font-size * 1.4; }
+h2 { font-size: $font-size * 1.3; }
+h3 { font-size: $font-size * 1.2; }
+h4 { font-size: $font-size * 1.1; }
+h5 { font-size: $font-size * 0.9; }
+
+h1, h2, h3, h4, h5 { margin-bottom: 10px; }
+
+h3, h4, h5, span.heading {
+  vertical-align: bottom;
+  @include heading;
+}
+
+.footer { height: 70px; }
+
+.error {
+  color: red;
+  font-size: $font-size * 0.7;
+}
+
+.cta.join {
+  width: 160px;
+  height: 50px;
+  line-height: 40px;
+  font-size: $font-size * 1.5;
+  margin: 20px auto;
+  display: block;
+}
+
+.cta {
+  @include red;
+  padding: 5px 10px;
+  max-width: 125px;
+  text-align: center;
+  color: white !important;
+  cursor: pointer;
+  margin: 10px 0;
+  border: 0;
+  display: inline-block;
+  &:hover { @include redhover; }
+  a {
+    display: block;
+    color: white !important;
+    width: 100%;
+    height: 100%;
+  }
+  &[disabled=disabled] {
+    &:hover {
+      @include red;
+      cursor: auto;
+    }
+  }
+}
+
+form h4 { color: $brown4; }
+
+.login-form {
+  & > * {
+    font-size: $font-size * 0.9;
+    height: 20px;
+    padding: 0 5px;
+    margin: 0 5px;
+  }
+  a {
+    height: auto;
+  }
+  input {
+    width: 150px;
+  }
+  button {
+    min-width: 15px !important;
+    width: 75px !important;
+  }
+}
+
+#main-form {
+  .row {
+    min-height: 60px;
+    padding: 5px 0;
+    margin-bottom: 5px;
+    & > * {
+      display: inline-block;
+    }
+  }
+  .row input, textarea {
+    margin-bottom: 0;
+  }
+  .row .header {
+    @include heading;
+    color: $brown4;
+    vertical-align: top;
+    max-width: 100px;
+    width: 35%;
+    margin-right: 10px;
+  }
+  .contents {
+    min-width: 300px;
+    width: 65%;
+  }
+}
+
+table.left-heading {
+  margin-bottom: 20px;
+  width: 100%;
+  tr {
+    height: 30px;
+    margin-bottom: 5px;
+  }
+  tr td {
+    padding: 5px 10px 5px 0;
+    font-size: $font-size * 0.9;
+    padding-left: 20px;
+  }
+  tr td:first-child {
+    @include heading;
+    border-right: solid 1px $brown2;
+    padding-left: 0;
+    margin-bottom: 10px;
+  }
+
+  td span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  td .editable {
+    @include editable;
+    @include heading;
+    padding: 1px;
+    padding-right: 3px;
+  }
+
+  td .prompt {
+    color: $brown4;
+    font-family: $header-font;
+  }
+}
+
+.row-of-buttons > * {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.ember-list-view {
+  overflow: auto;
+  position: relative;
+}
+.ember-list-item-view {
+  position: absolute;
+}
+
+ol { margin-left: 40px; }
+ul, ol {
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+script {
+  display: none;
+}
+
+section {
+  margin-bottom: 10px;
+}
+
+.sliding {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}

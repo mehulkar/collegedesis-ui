@@ -1,0 +1,18 @@
+<div class="bulletins-list">
+{{#each savedContent}}
+  <div class="bulletin-wrapper">
+    <div class="title">
+    {{#link-to 'news.story' this}}
+      {{title}}
+    {{/link-to}}
+  </div>
+    <div class="subtext">
+      {{#if authorIsOrganization}}
+        {{#link-to 'd.show' author}}{{author.name}}{{/link-to}}
+      {{/if}}
+      {{#if authorIsUser}}{{author.fullName}}{{/if}}
+    </div>
+  </div>
+{{/each}}
+</div>
+{{#link-to 'news.submit' tagName='button' classNames='cta'}}Share{{/link-to}}

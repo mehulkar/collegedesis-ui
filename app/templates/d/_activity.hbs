@@ -1,0 +1,12 @@
+<section class="activity">
+  <h4>Activity</h4>
+  {{#if bulletins}}
+    <ul>
+      {{#each bulletin in bulletins}}
+      <li class="small">{{#link-to 'news.story' bulletin}}{{bulletin.title}}{{/link-to}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p class="small muted">{{name}} has not posted anything yet.</p>
+  {{/if}}
+</section>

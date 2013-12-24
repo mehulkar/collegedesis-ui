@@ -1,0 +1,30 @@
+<h3>{{name}} {{#if university_name}}<span class="small muted"> {{university_name}}</span>{{/if}}</h3>
+<section {{bind-attr class=":links :animated isEditing:fadeOutRight"}}>
+  {{social-link href=websiteUrl iconClasses="icon-large icon-globe"}}
+  {{social-link href=facebookUrl iconClasses="icon-large icon-facebook"}}
+  {{social-link href=twitterUrl iconClasses="icon-large icon-twitter"}}
+  {{social-link href=youtubeUrl iconClasses="icon-large icon-youtube"}}
+  {{social-link href=instagramUrl iconClasses="icon-large icon-instagram"}}
+</section>
+<section class="control">
+{{#if currentUserIsAdmin}}
+  {{#if isEditing}}
+    <a class="small" {{action save}}>Save</a>
+    <!-- TODO: Do Good CSS later -->
+    &nbsp;&nbsp;&nbsp;
+    <a class="small muted" {{action cancel}}>Cancel</a>
+    {{#each msg in errors}}<p style="color: red;">{{msg}}</p>{{/each}}
+  {{else}}
+    <a class="small" {{action edit}}>Edit</a>
+  {{/if}}
+{{/if}}
+</section>
+
+{{partial 'd/sidebar'}}
+<div class="main-inside-container left">
+  {{#if isEditing}}
+    {{{partial 'd/edit_links'}}}
+  {{/if}}
+  {{partial 'd/member_list'}}
+  {{partial 'd/activity'}}
+</div>

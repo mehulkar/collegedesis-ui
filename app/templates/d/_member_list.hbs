@@ -1,0 +1,15 @@
+<section class="memberships">
+  <h4>Members</h4>
+  {{#if memberships}}
+    <ul>
+      {{#each mem in memberships}}
+        <li>
+          <img class="avatar" {{bind-attr src="mem.user.imageUrl"}}>
+          <h5>{{mem.user.fullName}}</h5>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p class="small muted">No members have registered.</p>
+  {{/if}}
+</section>

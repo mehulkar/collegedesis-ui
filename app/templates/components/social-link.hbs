@@ -1,0 +1,7 @@
+{{#if href}}
+  <a target="_blank" {{bind-attr href="href" class="href:link"}}>
+    <i {{bind-attr class="iconClasses"}}></i>
+  </a>
+{{else}}
+  <i {{bind-attr class="iconClasses"}}></i>
+{{/if}}

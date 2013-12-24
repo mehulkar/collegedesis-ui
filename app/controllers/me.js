@@ -1,0 +1,19 @@
+var MeController = Ember.ObjectController.extend({
+  needs: ['dIndex', 'application'],
+  deleteMembership: function(mem) {
+    var org;
+    org = mem.get('organization.name');
+    if (window.confirm("Are you sure you want to remove your membership from " + org + "?")) {
+      mem.deleteRecord();
+      return mem.save();
+    }
+  },
+  numOfOrganizations: (function() {
+    return this.get('controllers.application.numOfOrganizations');
+  }).property('controllers.application.numOfOrganizations'),
+  setContent: (function() {
+    return this.set('content', this.get('controllers.application.currentUser'));
+  }).observes('controllers.application.currentUser')
+});
+
+export default MeController;

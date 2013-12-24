@@ -1,0 +1,50 @@
+@import '_imports';
+
+.radio {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 40px;
+  background-color: transparentize($green, 0.3);
+  #party * { display: none; }
+  .loading { @include loader(30px); }
+}
+
+.radio-inner {
+  background-color: transparentize(lighten($green, 10%), 0.3);
+  max-width: 500px;
+  margin: 0 auto;
+  height: 100%;
+  @include ellipsis;
+  & > div  {
+    display: inline-block;
+    vertical-align: middle;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px;
+  }
+}
+
+.radio .now-playing {
+  width: 300px;
+  @include ellipsis;
+  line-height: 30px;
+  a { @include ellipsis; }
+  &.loading { background-position: left; }
+}
+
+.radio-icon {
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 105%;
+  cursor: pointer;
+}
+
+.forward { background-image: url('forward.svg'); }
+.play { background-image: url('play.svg'); }
+.pause { background-image: url('pause.svg'); }

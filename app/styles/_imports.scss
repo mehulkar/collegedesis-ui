@@ -1,0 +1,106 @@
+$green: #A0CC6F;
+$light-green: transparentize($green, 0.7);
+$darken-green: darken($green, 15%);
+$brown2: #B2AE73;
+$brown3: #40210D;
+$brown4: #4C4440;
+$link-color: #08C;
+$background: #FFF;
+$red: red;
+$darkred: darken(red, 15%);
+$lightred: darken(red, 10%);
+
+$logo-font: 'Port Lligat Slab', serif;
+$header-font: 'Snippet', sans-serif;
+$font: 'Noto Sans', sans-serif;
+$font-size:16px;
+
+$col: 42px;
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin clickable-button($width) {
+  display: inline-block;
+  vertical-align: middle;
+  color: $brown4;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ie-user-select: none;
+  height: 32px;
+  text-align: center;
+  padding: 5px 10px;
+  box-shadow: 0 0 1px $green;
+  border-radius: 3px;
+  min-width: 100px;
+  width: $width;
+  cursor: pointer;
+  background-color: transparent;
+  &:hover {box-shadow: 0 0 6px $green;}
+  &.no-click {
+    cursor: auto;
+    &:hover { box-shadow: 0 0 1px $green; }
+  }
+}
+
+@mixin editable {
+  box-shadow: 0 2px 2px -2px #333;
+  background-color: transparentize($brown2, 0.8);
+  outline: none;
+  border: none;
+  color: $brown4;
+}
+
+@mixin subnav {
+  & > * {
+    display: block;
+    a {
+      cursor: pointer;
+      &.active { background-color: transparentize($green, 0.6%);}
+    }
+  }
+}
+
+@mixin heading {
+  color: $brown2;
+  font-family: $header-font;
+}
+
+@mixin loader($min-height) {
+  background: url("spinner.gif") no-repeat center center;
+  height: $min-height;
+  min-height: 30px;
+  text-indent: -999px;
+  * { display: none !important; }
+}
+
+@mixin green {
+  background-image: -moz-linear-gradient(top, $light-green, $green);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($light-green), to($green));
+  background-image: -webkit-linear-gradient(top, $light-green, $green);
+  background-image: -o-linear-gradient(top, $light-green, $green);
+  background-image: linear-gradient(to bottom, $light-green, $green);
+}
+
+@mixin red {
+  background-image: -moz-linear-gradient(top, $red, $darkred);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($red), to($darkred));
+  background-image: -webkit-linear-gradient(top, $red, $darkred);
+  background-image: -o-linear-gradient(top, $red, $darkred);
+  background-image: linear-gradient(to bottom, $red, $darkred);
+  box-shadow: 0 2px 0 1px $darkred;
+  border-radius: 3px;
+}
+@mixin redhover {
+  background-image: -moz-linear-gradient(top, $red, $lightred);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($red), to($lightred));
+  background-image: -webkit-linear-gradient(top, $red, $lightred);
+  background-image: -o-linear-gradient(top, $red, $lightred);
+  background-image: linear-gradient(to bottom, $red, $lightred);
+  box-shadow: 0 2px 0 1px $lightred;
+  border-radius: 3px;
+}

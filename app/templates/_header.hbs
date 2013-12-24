@@ -1,0 +1,30 @@
+<nav>
+  <h1 class="logo" {{action goHome}}><span>College</span>Desis</h1>
+  <div class="min-nav" {{action showNav}}><i class="icon-reorder icon-2x"></i></div>
+  <ul class="top-nav">
+    {{#link-to 'index' tagName="li"}}Home{{/link-to}}
+    {{#link-to 'news' tagName="li"}}News{{/link-to}}
+    {{#link-to 'd.show' collegeDesisOrg tagName="li"}}About{{/link-to}}
+
+    {{#if directoryPage}}
+      {{#link-to 'd' tagName='li'}}Directory{{/link-to}}
+    {{else}}
+      {{#link-to 'directory' tagName='li'}}Directory{{/link-to}}
+    {{/if}}
+  </ul>
+
+  <ul class="account">
+  {{#if currentUser}}
+    {{#link-to 'me' tagName="li"}}<img height="14" {{bind-attr src="currentUser.imageUrl"}} />Profile{{/link-to}}
+    {{#if currentUser}}<li {{action logout}}>Sign out</li>{{/if}}
+  {{else}}
+    {{render 'login'}}
+  {{/if}}
+  </ul>
+</nav>
+<ul {{bind-attr class="leftNavVisible:visible :left-nav"}}>
+  <li {{action goToHome}}>Home</li>
+  <li {{action goToNews}}>News</li>
+  <li {{action goToAbout}}>About</li>
+  <li {{action goToDirectory}}>Directory</li>
+</ul>

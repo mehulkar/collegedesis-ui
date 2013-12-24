@@ -1,0 +1,42 @@
+@import '_imports';
+
+.profile-page {
+  .profile-head {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding: 10px;
+    & > * {
+      display: inline-block;
+      margin-bottom: 10px;
+      vertical-align: top;
+    }
+  }
+  img {
+    margin-right: 10px;
+    box-shadow: 0px 0px 6px #aaa;
+  }
+
+}
+
+.memberships {
+  li {
+    background-color: transparentize($brown2, 0.8);
+    padding: 5px 10px;
+    &.loading { @include loader(55px); }
+    & > a:hover, & > div:hover, select { cursor: pointer; }
+    & > a:hover, & > div:hover { text-decoration: underline; }
+    select { margin-bottom: 0;}
+  }
+  div, i {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  div { width: 80% }
+  .icon-remove-circle {
+    cursor: pointer;
+    min-width: 20px;
+    width: 5%;
+    font-size: 25px;
+    margin-right: 5px;
+  }
+}
