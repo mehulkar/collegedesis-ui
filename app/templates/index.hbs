@@ -1,14 +1,6 @@
-<div class="index right">
-  <h1 class="logo"><span>College</span>Desis</h1>
-  <p>We help South Asian student organizations connect, collaborate, and share.</p>
-  <p><span class="cta">{{#link-to 'directory'}}Explore{{/link-to}}</span></p>
-  <hr>
-  <h5 class="subtitle">Brands and publications?</h5>
-  <p class="small muted">We can help you reach our community.
-    <br>
-  Email us at <a href="mailto:partner@collegedesis.com">partner@collegedesis.com</a>
-  </p>
+<div class='index left'>
+  {{render 'news/list' }}
 </div>
-<div class="main-inside-container right">
-  {{render 'map'}}
+<div class='main-inside-container right'>
+  {{outlet}}
 </div>
