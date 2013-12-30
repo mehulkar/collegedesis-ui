@@ -1,0 +1,15 @@
+.bulletin-new {
+  position: relative;
+  select, input[type='text'], input[type='submit'] {
+    display: inline-block;
+  }
+
+  input[type='text'] {
+    width: 80%%;
+    max-width: 350px;
+  }
+  select {
+    width: 20%;
+    min-width: 200px;
+  }
+}

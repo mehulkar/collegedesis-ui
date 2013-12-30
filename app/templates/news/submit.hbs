@@ -1,35 +1,12 @@
-<form class="bulletin-new" id="main-form">
-  <div class="row">
-    <div class="header">URL</div>
-    <div class="contents">
-      {{input value=url placeholder="http://"}}
-      {{#unless validUrl}}<span class="error">Make sure you include http or https at the beginning!</span>{{/unless}}
-    </div>
-  </div>
-
-  <div class="row">
-
-    <div class="header">Author?</div>
-    <div class="contents">
+<form class="bulletin-new" {{action 'submit'}}>
+  {{#unless validUrl}}<span class="error">Include http or https at the beginning</span>{{/unless}}
+  <div class="contents">
+    {{input value=url placeholder="http://"}}
     {{view Ember.Select contentBinding="possibleAuthors"
-                        prompt="Who are you?"
-                        optionValuePath="content"
-                        optionLabelPath="content.name"
-                        selectionBinding="assignedAuthor"}}
-    </div>
-  </div>
-
-  {{#if validUrl}}
-  <div class="row">
-    <div class="header">Title</div>
-    <div class="contents">
-      {{input value=title}}
-      {{#unless title}}<span class="error">Missing title</span>{{/unless}}
-    </div>
-  </div>
-  {{/if}}
-
-  <div class="row-of-buttons">
-    <button class="cta" {{bind-attr disabled="errors"}} {{action 'submit'}}>Submit</button>
+                      prompt="Who are you?"
+                      optionValuePath="content"
+                      optionLabelPath="content.name"
+                      selectionBinding="assignedAuthor"}}
+    <input class="cta" {{bind-attr disabled="errors"}} value="Submit">
   </div>
 </form>
