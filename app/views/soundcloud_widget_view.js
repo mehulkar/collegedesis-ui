@@ -1,4 +1,4 @@
-var SoundCloudWidgetView = Ember.View.extend({
+export default Ember.View.extend({
   collapsed: true,
   template: null,
   track: null,
@@ -25,5 +25,3 @@ var SoundCloudWidgetView = Ember.View.extend({
     });
   }
 });
-
-export default SoundCloudWidgetView;

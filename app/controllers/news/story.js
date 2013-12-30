@@ -1,4 +1,4 @@
-var NewsStoryController = Ember.ObjectController.extend({
+export default Ember.ObjectController.extend({
   needs: ['application'],
   comment: null,
   savedComments: Em.computed.filterBy('comments', 'isNew', false),
@@ -17,5 +17,3 @@ var NewsStoryController = Ember.ObjectController.extend({
     return $(document).attr('title', "" + title + " - CollegeDesis Radio");
   }).observes('content')
 });
-
-export default  NewsStoryController;

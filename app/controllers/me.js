@@ -1,4 +1,4 @@
-var MeController = Ember.ObjectController.extend({
+export default Ember.ObjectController.extend({
   needs: ['application'],
 
   deleteMembership: function(mem) {
@@ -17,5 +17,3 @@ var MeController = Ember.ObjectController.extend({
     return this.set('content', this.get('controllers.application.currentUser'));
   }.observes('controllers.application.currentUser')
 });
-
-export default MeController;

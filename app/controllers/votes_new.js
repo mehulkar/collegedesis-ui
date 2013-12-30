@@ -1,4 +1,4 @@
-var VotesNewController = Ember.ObjectController.extend({
+export default Ember.ObjectController.extend({
   needs: ['application', 'newsStory'],
 
   actions: {
@@ -14,5 +14,3 @@ var VotesNewController = Ember.ObjectController.extend({
     },
   },
 });
-
-export default VotesNewController;

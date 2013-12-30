@@ -1,4 +1,4 @@
-var Organization = DS.Model.extend({
+export default DS.Model.extend({
   memberships: DS.hasMany('membership'),
   name: DS.attr('string'),
   displayName: DS.attr('string', {
@@ -60,5 +60,3 @@ var Organization = DS.Model.extend({
     return this.get('adminApplications').filterProperty('applicationStatusId', 1);
   }).property('adminApplications.@each.applicationStatusId')
 });
-
-export default Organization;

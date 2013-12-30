@@ -1,4 +1,4 @@
-var DSettingsRoute = Ember.Route.extend({
+export default Ember.Route.extend({
   serialize: function(model, params) {
     var name, object;
     object = {};
@@ -28,5 +28,3 @@ var DSettingsRoute = Ember.Route.extend({
     }
   }
 });
-
-export default DSettingsRoute;

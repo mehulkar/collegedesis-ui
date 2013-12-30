@@ -1,7 +1,7 @@
 import SoundCloudTrack from 'collegedesis/models/soundcloud_track';
 import SoundCloudWidgetView from 'collegedesis/views/soundcloud_widget_view';
 
-var RadioController = Ember.ArrayController.extend({
+export default Ember.ArrayController.extend({
   needs: ['application'],
   kClientID: "49620079b9efba53d4ae479266b35ad9",
   kMashupGroupID: "77839",
@@ -119,5 +119,3 @@ var RadioController = Ember.ArrayController.extend({
     return _results;
   }
 });
-
-export default RadioController;

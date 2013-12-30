@@ -1,4 +1,4 @@
-var ContenteditableView = Em.View.extend({
+export default Em.View.extend({
   tagName: "div",
 
   attributeBindings: ['contenteditable'],
@@ -60,5 +60,3 @@ var ContenteditableView = Em.View.extend({
     return undefined;
   }
 });
-
-export default ContenteditableView;

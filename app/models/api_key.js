@@ -1,6 +1,4 @@
-var ApiKey = Ember.Object.extend({
+export default Ember.Object.extend({
   token: '',
   user: null
 });
-
-export default ApiKey;

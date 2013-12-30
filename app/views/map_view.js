@@ -1,4 +1,4 @@
-var MapView = Ember.View.extend({
+export default Ember.View.extend({
   templateName: 'map',
 
   didInsertElement: function() {
@@ -48,5 +48,3 @@ var MapView = Ember.View.extend({
   }.property(),
 
 });
-
-export default MapView;

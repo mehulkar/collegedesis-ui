@@ -1,4 +1,4 @@
-var MembershipApplication = DS.Model.extend({
+export default DS.Model.extend({
   user: DS.belongsTo('user'),
   membershipTypeId: DS.attr('number'),
   organization: DS.belongsTo('organization'),
@@ -23,5 +23,3 @@ var MembershipApplication = DS.Model.extend({
     }
   }).property('applicationStatusId')
 });
-
-export default MembershipApplication;

@@ -1,4 +1,4 @@
-var ApplicationController = Ember.Controller.extend({
+export default Ember.Controller.extend({
 
   currentUser: function() {
     return this.get('authManager.apiKey.user');
@@ -62,5 +62,3 @@ var ApplicationController = Ember.Controller.extend({
     }
   }
 });
-
-export default ApplicationController;

@@ -1,4 +1,4 @@
-var LoginController = Ember.Controller.extend({
+export default Ember.Controller.extend({
   needs: ['application'],
 
   reset: function() {
@@ -28,5 +28,3 @@ var LoginController = Ember.Controller.extend({
   }
 
 });
-
-export default LoginController;

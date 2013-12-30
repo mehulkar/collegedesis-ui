@@ -1,4 +1,4 @@
-var NewsSubmitController = Ember.ObjectController.extend({
+export default Ember.ObjectController.extend({
   needs: ['application'],
 
   currentUser: Em.computed.alias('controllers.application.currentUser'),
@@ -84,5 +84,3 @@ var NewsSubmitController = Ember.ObjectController.extend({
     }
   }.property('url'),
 });
-
-export default NewsSubmitController;

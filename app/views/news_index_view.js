@@ -1,4 +1,4 @@
-var ListView = Ember.ListView.extend({
+export default Ember.ListView.extend({
   height: 500,
   rowHeight: 60,
   width: 331,
@@ -16,5 +16,3 @@ var ListView = Ember.ListView.extend({
     $('body').animate({scrollTop: pos });
   },
 });
-
-export default ListView;

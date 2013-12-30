@@ -1,4 +1,4 @@
-var DShowRoute = Ember.Route.extend({
+export default Ember.Route.extend({
   serialize: function(model, params) {
     var name, object;
     object = {};
@@ -21,5 +21,3 @@ var DShowRoute = Ember.Route.extend({
     return this.controller.set('isEditing', false);
   }
 });
-
-export default DShowRoute;

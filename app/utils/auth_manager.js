@@ -1,7 +1,7 @@
 import User from 'collegedesis/models/user';
 import ApiKey from 'collegedesis/models/api_key';
 
-var AuthManager = Ember.Object.extend({
+export default Ember.Object.extend({
 
   // Load the current user if the cookies exist and is valid
   init: function() {
@@ -70,5 +70,3 @@ DS.rejectionHandler = function(reason) {
   }
   throw reason;
 };
-
-export default AuthManager;

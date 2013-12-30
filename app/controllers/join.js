@@ -1,4 +1,4 @@
-var JoinController = Ember.ObjectController.extend({
+export default Ember.ObjectController.extend({
   working: false,
   needs: ['application'],
 
@@ -44,5 +44,3 @@ var JoinController = Ember.ObjectController.extend({
     return this.get('password') === this.get("password_confirmation");
   }.property('password', 'password_confirmation')
 });
-
-export default JoinController;

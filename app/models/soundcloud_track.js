@@ -1,4 +1,4 @@
-var SoundCloudTrack = Ember.Object.extend({
+export default Ember.Object.extend({
   json: null,
   id: null,
   oEmbed: null,
@@ -30,5 +30,3 @@ var SoundCloudTrack = Ember.Object.extend({
     return this.get('json.user.username');
   }).property('json.user.username')
 });
-
-export default SoundCloudTrack;

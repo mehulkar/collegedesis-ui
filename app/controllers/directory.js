@@ -1,5 +1,3 @@
-var DirectoryController = Ember.Controller.extend({
+export default Ember.Controller.extend({
   needs: ['map']
 });
-
-export default DirectoryController;

@@ -1,4 +1,4 @@
-var AboutRoute = Ember.Route.extend({
+export default Ember.Route.extend({
   beforeModel: function() {
     var _this = this;
     return this.store.find('organization', {
@@ -10,5 +10,3 @@ var AboutRoute = Ember.Route.extend({
     });
   }
 });
-
-export default AboutRoute;

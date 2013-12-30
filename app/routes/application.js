@@ -1,6 +1,6 @@
 import AuthManager from 'collegedesis/utils/auth_manager';
 
-var ApplicationRoute = Ember.Route.extend({
+export default Ember.Route.extend({
 
   setupController: function(controller) {
     controller.set('authManager', AuthManager.create());
@@ -64,5 +64,3 @@ var ApplicationRoute = Ember.Route.extend({
   },
 
 });
-
-export default ApplicationRoute;

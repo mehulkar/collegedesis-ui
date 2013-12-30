@@ -1,4 +1,4 @@
-var CommentsNewController = Ember.ObjectController.extend({
+export default Ember.ObjectController.extend({
   needs: ['application', 'newsStory'],
 
   actions: {
@@ -29,5 +29,3 @@ var CommentsNewController = Ember.ObjectController.extend({
     this.set('content', comment);
   }
 });
-
-export default CommentsNewController;

@@ -1,4 +1,4 @@
-var JoinRoute = Ember.Route.extend({
+export default Ember.Route.extend({
   beforeModel: function(user) {
     user = this.controllerFor('application').get('currentUser');
     if (user) {
@@ -20,5 +20,3 @@ var JoinRoute = Ember.Route.extend({
     return controller.set('content.email', email);
   }
 });
-
-export default JoinRoute;

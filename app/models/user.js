@@ -1,4 +1,4 @@
-var User = DS.Model.extend({
+export default DS.Model.extend({
   fullName: DS.attr('string'),
   email: DS.attr('string'),
   password: DS.attr('string'),
@@ -27,5 +27,3 @@ var User = DS.Model.extend({
     return this.get('memberships').mapProperty('organization');
   }).property('memberships.@each.organization')
 });
-
-export default User;

@@ -1,4 +1,4 @@
-var MapController = Ember.ArrayController.extend({
+export default Ember.ArrayController.extend({
   needs: ['application'],
   loading: false,
   selectedStates: Em.A(),
@@ -80,5 +80,3 @@ var MapController = Ember.ArrayController.extend({
     });
   }
 });
-
-export default MapController;

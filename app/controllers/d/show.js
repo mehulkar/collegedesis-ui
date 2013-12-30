@@ -1,4 +1,4 @@
-var DShowController = Ember.ObjectController.extend({
+export default Ember.ObjectController.extend({
   needs: ['application'],
   isEditing: false,
   noContactInfo: (function() {
@@ -132,5 +132,3 @@ var DShowController = Ember.ObjectController.extend({
     }
   }
 });
-
-export default DShowController;

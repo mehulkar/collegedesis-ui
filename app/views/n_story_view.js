@@ -1,4 +1,4 @@
-var NStoryView = Ember.View.extend({
+export default Ember.View.extend({
   classNames: ['bulletin'],
 
   actions: {
@@ -12,5 +12,3 @@ var NStoryView = Ember.View.extend({
   }.observes('controller.content'),
 
 });
-
-export default NStoryView;
