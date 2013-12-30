@@ -1,17 +1,21 @@
 {{partial 'header'}}
-<div class="page">
 
+<div class="outer-page">
   {{render 'news/submit' newBulletin}}
 
-  <div class="messages">
-    {{#if currentUser}}
-      {{#unless currentUser.approved}}
-        <p class="error">Get your profile approved by registering a membership with one of the {{numOfOrganizations}} organizations in our {{#link-to 'directory'}}directory{{/link-to}}!</p>
-      {{/unless}}
-    {{/if}}
+  <div class="page">
+    <div class="messages">
+      {{#if currentUser}}
+        {{#unless currentUser.approved}}
+          <p class="error">Get your profile approved by registering a membership with one of the {{numOfOrganizations}} organizations in our {{#link-to 'directory'}}directory{{/link-to}}!</p>
+        {{/unless}}
+      {{/if}}
+    </div>
+    {{outlet}}
   </div>
-  {{outlet}}
+
 </div>
+
 <div class="footer">
   {{render 'radio'}}
 </div>

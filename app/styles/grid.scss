@@ -1,10 +1,10 @@
 @import '_imports';
 
-.page, .footer {
+.outer-page, .footer {
   max-width: $col * 23;
 }
 
-.page {
+.outer-page {
   margin: 36px 50px 0 210px;
   padding: 10px;
 }
