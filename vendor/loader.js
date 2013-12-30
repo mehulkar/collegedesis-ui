@@ -14,7 +14,6 @@ var define, requireModule, require, requirejs;
     seen[name] = {};
 
     if (!registry[name]) {
-      debugger;
       throw new Error("Could not find module " + name);
     }
 
