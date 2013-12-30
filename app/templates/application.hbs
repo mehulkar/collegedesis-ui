@@ -1,5 +1,8 @@
 {{partial 'header'}}
 <div class="page">
+
+  {{render 'news/submit' newBulletin}}
+
   <div class="messages">
     {{#if currentUser}}
       {{#unless currentUser.approved}}

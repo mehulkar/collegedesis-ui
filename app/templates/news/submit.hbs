@@ -1,13 +1,5 @@
 <form class="bulletin-new" id="main-form">
   <div class="row">
-    <div class="header">Title</div>
-    <div class="contents">
-      {{input value=title}}
-      {{#unless title}}<span class="error">Missing title</span>{{/unless}}
-    </div>
-  </div>
-
-  <div class="row">
     <div class="header">URL</div>
     <div class="contents">
       {{input value=url placeholder="http://"}}
@@ -15,22 +7,29 @@
     </div>
   </div>
 
-  {{#unless showingPreview}}
-    <div class="row">
+  <div class="row">
 
     <div class="header">Author?</div>
     <div class="contents">
     {{view Ember.Select contentBinding="possibleAuthors"
-                    optionValuePath="content"
-                    optionLabelPath="content.name"
-                    selectionBinding="assignedAuthor"}}
+                        prompt="Who are you?"
+                        optionValuePath="content"
+                        optionLabelPath="content.name"
+                        selectionBinding="assignedAuthor"}}
     </div>
+  </div>
+
+  {{#if validUrl}}
+  <div class="row">
+    <div class="header">Title</div>
+    <div class="contents">
+      {{input value=title}}
+      {{#unless title}}<span class="error">Missing title</span>{{/unless}}
     </div>
-  {{/unless}}
+  </div>
+  {{/if}}
+
   <div class="row-of-buttons">
     <button class="cta" {{bind-attr disabled="errors"}} {{action 'submit'}}>Submit</button>
-    <button class="clickable" {{action 'preview'}}>
-    {{#if showingPreview}}Edit{{else}}Preview{{/if}}
-    </button>
   </div>
 </form>
