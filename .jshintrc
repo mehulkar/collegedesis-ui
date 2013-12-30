@@ -9,7 +9,9 @@
     "DS",
     "$",
     "SC",
-    "Showdown"
+    "Showdown",
+    "App",
+    "ic"
   ],
   "node" : false,
   "browser" : false,
