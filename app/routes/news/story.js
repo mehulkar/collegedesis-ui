@@ -1,4 +1,5 @@
-var NewsStoryRoute = Ember.Route.extend({
+export default Ember.Route.extend({
+
   serialize: function(model, params) {
     var name, object;
     object = {};
@@ -31,5 +32,3 @@ var NewsStoryRoute = Ember.Route.extend({
     return view.save();
   }
 });
-
-export default NewsStoryRoute;

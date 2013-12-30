@@ -8,8 +8,8 @@ var NewsSubmitController = Ember.ObjectController.extend({
   showingPreview: Em.computed.alias('showPreview'),
 
   /*
-      Properties and functions needed to assign
-      an author for a polymorphic relationship.
+    Properties and functions needed to assign
+    an author for a polymorphic relationship.
   */
 
   possibleAuthors: function() {

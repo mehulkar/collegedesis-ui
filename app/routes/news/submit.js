@@ -1,7 +1,8 @@
-var NewsSubmitRoute = Ember.Route.extend({
+export default Ember.Route.extend({
+
   beforeModel: function(model) {
-    var user;
-    user = this.controllerFor('application').get('currentUser');
+    var user = this.controllerFor('application').get('currentUser');
+
     if (user) {
       if (!user.get('approved')) {
         return this.transitionTo('me');
@@ -19,5 +20,3 @@ var NewsSubmitRoute = Ember.Route.extend({
     }
   }
 });
-
-export default NewsSubmitRoute;

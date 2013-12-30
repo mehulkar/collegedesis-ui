@@ -1,6 +1,6 @@
-var NewsRoute = Ember.Route.extend({
+export default Ember.Route.extend({
   setupController: function() {
-    return this.controllerFor('news.list').set('content', this.store.find('bulletin'));
+    return this.controllerFor('newsList').set('content', this.store.find('bulletin'));
   },
   actions: {
     goToBulletin: function(bulletin) {
@@ -8,5 +8,3 @@ var NewsRoute = Ember.Route.extend({
     }
   }
 });
-
-export default NewsRoute;
