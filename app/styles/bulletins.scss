@@ -36,12 +36,31 @@
   }
 }
 
-@import '_imports';
+.bulletin {
+  .bulletin-info {
+    float: left;
+    width: 200px;
+    .link {
+      width: 44px;
+      color: $brown4;
+      margin-right: 10px;
+      i:hover {
+        text-shadow: 2px 1px 5px #ccc;
+      }
+    }
+  }
+}
+
+.bulletin .bulletin-main {
+  margin-left: 200px;
+}
 
 .bulletin {
   h3 { color: $brown4; }
   & > * { margin-bottom: 20px; }
+
   .bulletin-header {
+    .title { max-width: 350px;}
     position: relative;
     font-size: $font-size * 0.9;
     .vote {
@@ -55,18 +74,6 @@
     .link, .bulletin-info {
       display: inline-block;
       vertical-align: top;
-    }
-    .bulletin-info {
-      & > * { display: inline-block; }
-      .title { max-width: 350px;}
-      .link {
-        width: 44px;
-        color: $brown4;
-        margin-right: 10px;
-        i:hover {
-          text-shadow: 2px 1px 5px #ccc;
-        }
-      }
     }
   }
   .bulletin-comments {

@@ -1,36 +1,39 @@
-<div class="bulletin-header">
+<div class="bulletin">
   <div class="bulletin-info">
-    {{#if isLink}}<a class="link" {{bind-attr href="url"}} target="_blank"><i class="icon-external-link icon-3x"></i></a>{{/if}}
-    <h3 class="title">{{title}}</h3>
-  </div>
-  <div class="author">
-    <h5>Posted by
+    <h5>Author:
       {{#if authorIsOrganization}}{{#link-to 'd.show' author}}{{author.name}}{{/link-to}}{{/if}}
       {{#if authorIsUser}}{{author.fullName}}{{/if}}
-       on {{humanizedCreatedAt}}
     </h5>
+    <h5>Date: {{humanizedCreatedAt}}</h5>
   </div>
 
-  <div class="row-of-buttons">
-    <div class="vote">
-      {{#if hasBeenVotedOn}}
-        <div class="button no-click">Score: <span class="heading">{{roundedScore}}</span></div>
-      {{else}}
-        {{render 'votes/new' newVote}}
-      {{/if}}
+  <div class="bulletin-main">
+    <div class="bulletin-header">
+      {{#if isLink}}<a class="link" {{bind-attr href="url"}} target="_blank"><i class="icon-external-link icon-3x"></i></a>{{/if}}
+        <h3 class="title">{{title}}</h3>
+
+      <div class="row-of-buttons">
+        <div class="vote">
+          {{#if hasBeenVotedOn}}
+            <div class="button no-click">Score: <span class="heading">{{roundedScore}}</span></div>
+          {{else}}
+            {{render 'votes/new' newVote}}
+          {{/if}}
+        </div>
+        <a class="button" {{action jumpToComment target="view"}}>
+          <i class="icon-comment"></i>
+          <span>Comment{{#if comments}} ({{savedComments.length}}){{/if}}</span>
+        </a>
+      </div>
     </div>
-    <a class="button" {{action jumpToComment target="view"}}>
-      <i class="icon-comment"></i>
-      <span>Comment{{#if comments}} ({{savedComments.length}}){{/if}}</span>
-    </a>
-  </div>
-</div>
-<div class="bulletin-body">
-  {{body}}
-</div>
+    <div class="bulletin-body">
+      {{body}}
+    </div>
 
-<div class="bulletin-comments">
-  <h3>Comments</h3>
-  {{render 'comments/new' newComment}}
-  {{render 'comments/index' savedComments}}
+    <div class="bulletin-comments">
+      <h3>Comments</h3>
+      {{render 'comments/new' newComment}}
+      {{render 'comments/index' savedComments}}
+    </div>
+  </div>
 </div>
