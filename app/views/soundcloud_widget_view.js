@@ -10,14 +10,14 @@ export default Ember.View.extend({
     this.set('track.widget', widget);
     this.get('controller.viewObjects').pushObject(this);
     widget.bind(SC.Widget.Events.READY, function() {
-      return _this.get('controller').play();
+      return _this.get('controller').send('play');
     });
     return widget.bind(SC.Widget.Events.FINISH, function() {
       return _this._moveToNextTrack();
     });
   },
   _moveToNextTrack: function() {
-    return this.get('controller').nextSong();
+    return this.get('controller').send('nextSong');
   },
   prepend: function() {
     return this._insertElementLater(function() {
