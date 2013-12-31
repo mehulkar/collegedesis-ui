@@ -1,6 +1,17 @@
-<p style="margin-top: 100px;" class="muted center">
-  News from {{numOfOrganizations}} South Asian student organizations all around America
-</p>
-<p class="center small mobile">
-  <a {{action scrollToStories target="view"}}>Read &darr;</a>
-</p>
+<div class="bulletins">
+{{#each savedContent}}
+  <div class="bulletin-wrapper">
+    <div class="title">
+    {{#link-to 'news.story' this}}
+      {{title}}
+    {{/link-to}}
+  </div>
+    <div class="subtext">
+      {{#if authorIsOrganization}}
+        {{#link-to 'd.show' author}}{{author.name}}{{/link-to}}
+      {{/if}}
+      {{#if authorIsUser}}{{author.fullName}}{{/if}}
+    </div>
+  </div>
+{{/each}}
+</div>
