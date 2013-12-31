@@ -10,6 +10,7 @@ Working on setting up a staging API to use for development as well.
 
 ```
 npm install -g grunt-cli
+npm install
 grunt server
 ```
 
