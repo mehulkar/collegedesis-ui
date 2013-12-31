@@ -15,6 +15,20 @@ nav {
   }
   ul {
     li:first-child { padding-left: 0px; }
+    li {
+      padding: 0 10px;
+      margin-bottom: 0;
+      font-size: $font-size * 0.9;
+      display: inline-block;
+      vertical-align: middle;
+      color: $brown4;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -o-user-select: none;
+      -ie-user-select: none;
+      text-align: center;
+      cursor: pointer;
+    }
   }
 }
 
