@@ -76,7 +76,7 @@ export default Ember.ObjectController.extend({
   },
 
   errors: function() {
-    return !(this.get('assignedAuthor') && this.get('title') && this.get('url') && this.get('validUrl'));
+    return !(this.get('assignedAuthor') && this.get('url') && this.get('validUrl'));
   }.property('assignedAuthor', 'title', 'url', 'validUrl'),
 
   validUrl: function() {
