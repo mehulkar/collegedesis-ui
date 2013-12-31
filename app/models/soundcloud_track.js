@@ -1,10 +1,22 @@
 export default Ember.Object.extend({
+  // internal properties
   json: null,
   id: null,
   oEmbed: null,
   widget: null,
   inDom: false,
 
+  // public properties
+  title: Em.computed.alias('json.title'),
+  url: Em.computed.alias('json.permalink_url'),
+  artist: Em.computed.alias('json.user.username'),
+
+  // public computed property
+  embedHtml: function() {
+    return this.get('oEmbed.html').replace("http%3A%2F%2F", '//');
+  }.property('oEmbed'),
+
+  // public method
   load: function() {
     var url,
       _this = this;
@@ -16,23 +28,6 @@ export default Ember.Object.extend({
     });
   },
 
-  isLoaded: function() {
-    return this.get('oEmbed') != null;
-  }.property('oEmbed'),
-
-  embedHtml: function() {
-    return this.get('oEmbed.html').replace("http%3A%2F%2F", '//');
-  }.property('oEmbed'),
-
-  title: function() {
-    return this.get('json.title');
-  }.property('json.title'),
-
-  url: function() {
-    return this.get('json.permalink_url');
-  }.property('json.permalink_url'),
-
-  artist: function() {
-    return this.get('json.user.username');
-  }.property('json.user.username')
+  // state
+  isLoaded: Em.computed.notEmpty('oEmbed'),
 });
