@@ -1,7 +1,11 @@
 {{partial 'header'}}
 
 <div class="outer-page">
-  {{render 'news/submit' newBulletin}}
+  {{#if currentUser}}
+    {{render 'news/submit' newBulletin}}
+  {{else}}
+    <p class="muted center">Sign in to submit a story!</p>
+  {{/if}}
   <div class="page">
     <div class="messages">
       {{#if currentUser}}
