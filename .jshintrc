@@ -11,7 +11,8 @@
     "SC",
     "Showdown",
     "App",
-    "ic"
+    "ic",
+    "moment"
   ],
   "node" : false,
   "browser" : false,
