@@ -6,8 +6,6 @@ Router.map(function() {
     this.route('submit');
   });
 
-  this.route('about');
-
   this.route('directory');
 
   this.resource('d', function() {
