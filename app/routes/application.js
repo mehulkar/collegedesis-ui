@@ -6,7 +6,6 @@ export default Ember.Route.extend({
     controller.set('authManager', AuthManager.create());
     this._loadStatData();
     this._loadCollegeDesis();
-    controller.set('newBulletin', this.store.createRecord('bulletin'));
   },
 
   actions: {
