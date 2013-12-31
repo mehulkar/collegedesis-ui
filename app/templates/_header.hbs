@@ -6,10 +6,13 @@
     News from {{numOfOrganizations}} South Asian student organizations all around America
   </div>
 
-  <ul class="account">
+  <div class="account">
   {{#if currentUser}}
-    {{#link-to 'me' tagName="li"}}<img height="14" {{bind-attr src="currentUser.imageUrl"}} />Profile{{/link-to}}
-    {{#if currentUser}}<li {{action logout}}>Sign out</li>{{/if}}
+    {{#link-to 'me'}}
+      <img height="14" {{bind-attr src="currentUser.imageUrl"}} />
+      <span>Profile</span>
+    {{/link-to}}
+    {{#if currentUser}}<span {{action 'logout'}}>Sign out</span>{{/if}}
   {{else}}
     {{render 'login'}}
   {{/if}}
