@@ -35,14 +35,8 @@ export default Ember.Route.extend({
     },
 
     logout: function() {
-      var session,
-        _this = this;
-      session = this.controller.get('session');
-      session.deleteRecord();
-      return session.save().then(function() {
-        _this.set('controller.currentUser', null);
-        _this.set('controller.session', _this.store.createRecord('session'));
-      });
+      this.controller.get('authManager').reset();
+      this.transitionTo('index');
     }
   },
 
