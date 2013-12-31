@@ -11,6 +11,10 @@
     {{/if}}
   </ul>
 
+  <p class="muted center">
+    News from {{numOfOrganizations}} South Asian student organizations all around America
+  </p>
+
   <ul class="account">
   {{#if currentUser}}
     {{#link-to 'me' tagName="li"}}<img height="14" {{bind-attr src="currentUser.imageUrl"}} />Profile{{/link-to}}

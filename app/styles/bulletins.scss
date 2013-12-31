@@ -8,11 +8,13 @@
 }
 
 .bulletin-wrapper {
-  height: 60px;
-  width: 100%;
+  height: 250px;
+  width: 200px;
+  display: inline-block;
   padding: 5px 10px;
+  margin: 5px;
   text-transform: capitalize;
-  border-bottom: solid 1px $green;
+  border: solid 1px $green;
   overflow: hidden;
   .subtext, .title {
     a {
@@ -135,9 +137,4 @@ form {
     font-style: italic;
     max-width: 500px;
   }
-}
-
-.bulletins-list {
-  max-height: 430px;
-  overflow: auto;
 }

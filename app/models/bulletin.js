@@ -18,11 +18,12 @@ export default DS.Model.extend({
   }.property('body'),
 
   humanizedCreatedAt: function() {
-    if (this.get('createdAt') != null) {
-      return window.strftime(this.get('createdAt'), "%B %d, %Y");
-    } else {
-      return "Date";
-    }
+    return this.get('createdAt');
+    // if (this.get('createdAt') != null) {
+    //   return window.strftime(this.get('createdAt'), "%B %d, %Y");
+    // } else {
+    //   return "Date";
+    // }
   }.property("createdAt"),
 
   authorId: DS.attr('number'),
