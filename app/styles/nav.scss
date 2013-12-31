@@ -18,7 +18,6 @@ nav {
   }
 }
 
-
 nav .account {
   float:right;
   height: 40px;
@@ -40,26 +39,5 @@ nav .account {
     display: inline-block;
     vertical-align: middle;
     margin-right: 5px;
-  }
-}
-
-body .sub-nav {
-  margin-bottom: 10px;
-  &.no-link li {
-    padding: 5px;
-    cursor: auto;
-  }
-  li {
-    @include subnav;
-    display: block;
-    min-height: 40px;
-    cursor: pointer;
-    margin-left: 2px;
-    margin-bottom: 0;
-    padding: 10px;
-    &.active {
-      border-left: 2px solid $green;
-      margin-left: 0;
-    }
   }
 }
