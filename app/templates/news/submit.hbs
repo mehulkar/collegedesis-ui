@@ -1,4 +1,4 @@
-<form class="bulletin-new" {{action 'submit'}}>
+<form class="bulletin-new" {{action 'submit' on='submit'}}>
   {{#unless validUrl}}<span class="error">Include http or https at the beginning</span>{{/unless}}
   <div class="contents">
     {{input value=url placeholder="http://"}}
