@@ -19,9 +19,6 @@ export default Ember.Route.extend({
     controller.set('newComment', this.store.createRecord('comment', {
       bulletin: model
     }));
-    return controller.set('newVote', this.store.createRecord('vote', {
-      bulletin: model
-    }));
   },
   afterModel: function(model) {
     var view;

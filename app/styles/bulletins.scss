@@ -63,14 +63,6 @@
     .title { max-width: 350px;}
     position: relative;
     font-size: $font-size * 0.9;
-    .vote {
-      display: inline-block;
-      & > div, & > a {
-        display: inline-block;
-        vertical-align: middle;
-      }
-      .icon-thumbs-up { font-size: 20px; }
-    }
     .link, .bulletin-info {
       display: inline-block;
       vertical-align: top;

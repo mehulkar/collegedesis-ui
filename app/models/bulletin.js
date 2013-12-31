@@ -4,7 +4,6 @@ export default DS.Model.extend({
   url: DS.attr('string'),
   createdAt: DS.attr('date'),
   errors: [],
-  votes: DS.hasMany('vote'),
   comments: DS.hasMany('comment'),
   user: DS.belongsTo('user'),
   slug: DS.attr('string'),

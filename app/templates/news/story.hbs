@@ -11,21 +11,6 @@
     <div class="bulletin-header">
       {{#if isLink}}<a class="link" {{bind-attr href="url"}} target="_blank"><i class="icon-external-link icon-3x"></i></a>{{/if}}
         <h3 class="title">{{title}}</h3>
-
-      <div class="row-of-buttons">
-        <div class="vote">
-          {{#if hasBeenVotedOn}}
-            <div class="button no-click">Score: <span class="heading">{{roundedScore}}</span></div>
-          {{else}}
-            {{render 'votes/new' newVote}}
-          {{/if}}
-        </div>
-        <a class="button" {{action jumpToComment target="view"}}>
-          <i class="icon-comment"></i>
-          <span>Comment{{#if comments}} ({{savedComments.length}}){{/if}}</span>
-        </a>
-      </div>
-    </div>
     <div class="bulletin-body">
       {{body}}
     </div>
