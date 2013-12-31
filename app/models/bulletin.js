@@ -10,12 +10,6 @@ export default DS.Model.extend({
   score: DS.attr('number'),
   isLink: true,
 
-  preview: function() {
-    if (this.get('body')) {
-      return "" + (this.get('body').slice(0, 20)) + "...";
-    }
-  }.property('body'),
-
   humanizedCreatedAt: function() {
     return moment(this.get('createdAt')).fromNow();
   }.property("createdAt"),
