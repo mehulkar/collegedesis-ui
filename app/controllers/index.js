@@ -1,3 +1,5 @@
 export default Ember.Controller.extend({
-  needs: ['map']
+  needs: ['map', 'application'],
+
+  currentUser: Em.computed.alias('controllers.application.currentUser'),
 });
