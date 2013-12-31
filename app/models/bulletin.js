@@ -18,20 +18,15 @@ export default DS.Model.extend({
   authorType: DS.attr('string'),
 
   author: function() {
-    var id;
-    id = this.get('authorId');
+    var id = this.get('authorId');
+
     if (this.get('authorIsOrganization')) {
       return this.store.find('organization', id);
     } else {
-      return this.get('store').find('user', id);
+      return this.store.find('user', id);
     }
   }.property('authorId', 'authorIsOrganization'),
 
-  authorIsOrganization: function() {
-    return this.get('authorType') === 'Organization';
-  }.property('authorType'),
-
-  authorIsUser: function() {
-    return this.get('authorType') === 'User';
-  }.property('authorType'),
+  authorIsOrganization: Em.computed.equal('authorType', 'Organization'),
+  authorIsUser: Em.computed.equal('authorType', 'User'),
 });
