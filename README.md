@@ -4,16 +4,15 @@ This is the UI for [collegedesis.com](//collegedesis.com). It is served up with 
 
 ## Running Locally
 
-- Make sure you have [Node](//nodejs.com) installed
-- `npm install -g grunt-cli`
-- grunt tasks for starting building and starting a server coming soon
+You'll need to [install node](http://nodejs.org/) and also setup a
+local version of the [API](http://github.com/collegedesis/api).
+Working on setting up a staging API to use for development as well.
 
-### The Directory
+```
+npm install -g grunt-cli
+grunt server
+```
 
-The Directory hosts 700 South Asian student organizations from all around the country. Our membership system allows anyone to first sign up, and then register as a member of any of these organizations. This means that organizations can easily get in touch with their members alumni over the years with the click of a button.
+### About
 
-### The News Board
-
-The goal of the News Board is to be the best place to find out what's going on in the world of college desis and to be instrumental in starting and maintaining conversations on a national level.
-
-It allows anyone in The Directory to post links and also collects tweets, facebook posts, and instagram pictures from the accounts of organizations all over the country.
+See more about CollegeDesis [here](http://github.com/collegedesis/about).
