@@ -1,10 +1,21 @@
 <div class="bulletin">
   <div class="bulletin-info">
     <h5>Author:
-      {{#if authorIsOrganization}}{{#link-to 'd.show' author}}{{author.name}}{{/link-to}}{{/if}}
+      {{#if authorIsOrganization}}
+        {{#link-to 'd.show' author}}{{author.name}}{{/link-to}}
+      {{/if}}
       {{#if authorIsUser}}{{author.fullName}}{{/if}}
     </h5>
-    <h5>Date: {{humanizedCreatedAt}}</h5>
+    <h5>Posted {{humanizedCreatedAt}}</h5>
+    {{#if authorIsOrganization}}
+      <section {{bind-attr class=":links :animated isEditing:fadeOutRight"}}>
+        {{social-link href=author.websiteUrl iconClasses="icon-large icon-globe"}}
+        {{social-link href=author.facebookUrl iconClasses="icon-large icon-facebook"}}
+        {{social-link href=author.twitterUrl iconClasses="icon-large icon-twitter"}}
+        {{social-link href=author.youtubeUrl iconClasses="icon-large icon-youtube"}}
+        {{social-link href=author.instagramUrl iconClasses="icon-large icon-instagram"}}
+      </section>
+    {{/if}}
   </div>
 
   <div class="bulletin-main">

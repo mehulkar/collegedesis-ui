@@ -29,6 +29,7 @@
 }
 
 body .links {
+  margin: 10px 0;
   & > * { display: inline-block; margin-right: 10px;}
   i { color: #ccc; }
   a {
