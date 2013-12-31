@@ -4,6 +4,7 @@ export default Ember.Object.extend({
   oEmbed: null,
   widget: null,
   inDom: false,
+
   load: function() {
     var url,
       _this = this;
@@ -14,19 +15,24 @@ export default Ember.Object.extend({
       return _this.set('oEmbed', oEmbed);
     });
   },
-  isLoaded: (function() {
+
+  isLoaded: function() {
     return this.get('oEmbed') != null;
-  }).property('oEmbed'),
-  embedHtml: (function() {
+  }.property('oEmbed'),
+
+  embedHtml: function() {
     return this.get('oEmbed.html').replace("http%3A%2F%2F", '//');
-  }).property('oEmbed'),
-  title: (function() {
+  }.property('oEmbed'),
+
+  title: function() {
     return this.get('json.title');
-  }).property('json.title'),
-  url: (function() {
+  }.property('json.title'),
+
+  url: function() {
     return this.get('json.permalink_url');
-  }).property('json.permalink_url'),
-  artist: (function() {
+  }.property('json.permalink_url'),
+
+  artist: function() {
     return this.get('json.user.username');
-  }).property('json.user.username')
+  }.property('json.user.username')
 });

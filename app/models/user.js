@@ -9,21 +9,22 @@ export default DS.Model.extend({
   membershipApplications: DS.hasMany('membershipApplication'),
   bulletins: DS.hasMany('bulletin'),
 
-  adminMemberships: (function() {
-    var t;
-    t = this.store('membershipType', 2);
+  adminMemberships: function() {
+    var t = this.store('membershipType', 2);
     return this.get('memberships').filterProperty('membershipType', t);
-  }).property('memberships.@each.membershipType'),
+  }.property('memberships.@each.membershipType'),
+
   adminOf: function(orgId) {
     return this.get('adminMemberships').mapProperty('organization.id').contains(orgId);
   },
   memberOf: function(orgId) {
     return this.get('memberships').mapProperty('organization.id').contains(orgId);
   },
-  pendingMembershipApplications: (function() {
+  pendingMembershipApplications: function() {
     return this.get('membershipApplications').filterProperty('applicationStatusId', 1);
-  }).property('membershipApplications.@each.applicationStatusId'),
-  organizations: (function() {
+  }.property('membershipApplications.@each.applicationStatusId'),
+
+  organizations: function() {
     return this.get('memberships').mapProperty('organization');
-  }).property('memberships.@each.organization')
+  }.property('memberships.@each.organization')
 });

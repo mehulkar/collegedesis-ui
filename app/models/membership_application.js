@@ -3,14 +3,16 @@ export default DS.Model.extend({
   membershipTypeId: DS.attr('number'),
   organization: DS.belongsTo('organization'),
   applicationStatusId: DS.attr('number'),
-  membershipTypeName: (function() {
+
+  membershipTypeName: function() {
     if (this.get("membershipTypeId") === 1) {
       return "a Member";
     } else {
       return "an Administrator";
     }
-  }).property('membershipTypeId'),
-  status: (function() {
+  }.property('membershipTypeId'),
+
+  status: function() {
     switch (this.get('applicationStatusId')) {
       case 1:
         return "pending";
@@ -21,5 +23,5 @@ export default DS.Model.extend({
       default:
         return "Not sure";
     }
-  }).property('applicationStatusId')
+  }.property('applicationStatusId')
 });
