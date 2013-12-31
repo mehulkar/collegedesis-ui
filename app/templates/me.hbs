@@ -10,7 +10,7 @@
       {{#each mem in memberships}}
         <li {{bind-attr class="mem.notApproved mem.loading:loading"}}>
           <i {{action deleteMembership mem}} class="icon-remove-circle"></i>
-          {{#link-to 'd.show' mem.organization tagName="div"}}
+          {{#link-to 'directory.show' mem.organization tagName="div"}}
             {{mem.displayName}}
           {{/link-to}}
         </li>

@@ -6,14 +6,8 @@ Router.map(function() {
     this.route('submit');
   });
 
-  this.route('directory');
-
-  this.resource('d', function() {
-    this.route('show', {path: ':slug'});
-  });
-
-  this.resource('organizations', function() {
-    this.route('index');
+  this.resource('directory', function() {
+    this.route('index', {path: '/'});
     this.route('show', {path: ':slug'});
   });
 

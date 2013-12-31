@@ -1,7 +1,7 @@
 <div class="bulletin-info">
   <h5>Author:
     {{#if authorIsOrganization}}
-      {{#link-to 'd.show' author}}{{author.name}}{{/link-to}}
+      {{#link-to 'directory.show' author}}{{author.name}}{{/link-to}}
     {{/if}}
     {{#if authorIsUser}}{{author.fullName}}{{/if}}
   </h5>

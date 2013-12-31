@@ -1,0 +1,25 @@
+<div class="index right">
+  <form class="inline">
+    <div class="input-wrapper">
+      <div class="search icon"></div>
+      {{input value=controllers.map.searchParam autocomplete="off"}}
+    </div>
+    <button style="visibility:hidden;" {{action search target='controllers.map'}}>Search</button>
+  </form>
+  <div class="map-results">
+    <ul {{bind-attr class="controllers.map.loading"}}>
+      {{#each org in controllers.map.organizations}}
+        {{#link-to 'directory.show' org tagName="li"}}{{org.displayName}}{{/link-to}}
+      {{/each}}
+    </ul>
+    {{#unless controllers.map.organizations}}
+      <div class="muted" style="height: 100%; width: 100%; text-align:center;">Search me or click on the map</div>
+    {{/unless}}
+  </div>
+{{#if controllers.map.organizations}}
+  <h4 {{bind-attr class="controllers.map.loading"}}>{{controllers.map.organizations.length}} matches</h4>
+{{/if}}
+</div>
+<div class="main-inside-container right">
+  {{render 'map'}}
+</div>

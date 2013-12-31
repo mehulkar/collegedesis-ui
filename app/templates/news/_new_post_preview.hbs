@@ -3,7 +3,7 @@
     <div class="bulletin-info">
       <h3>{{#if title}}{{title}}{{else}}No title{{/if}}</h3>
       <h5>Posted by
-        {{#if authorIsOrganization}}{{#link-to 'd.show' author}}{{author.name}}{{/link-to}}{{/if}}
+        {{#if authorIsOrganization}}{{#link-to 'directory.show' author}}{{author.name}}{{/link-to}}{{/if}}
         {{#if authorIsUser}}{{author.fullName}}{{/if}}
          on {{humanizedCreatedAt}}
       </h5>
