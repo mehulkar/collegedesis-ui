@@ -9,8 +9,11 @@
 
   <div class="bulletin-main">
     <div class="bulletin-header">
-      {{#if isLink}}<a class="link" {{bind-attr href="url"}} target="_blank"><i class="icon-external-link icon-3x"></i></a>{{/if}}
-        <h3 class="title">{{title}}</h3>
+      {{#if isLink}}
+        <a class="link" {{bind-attr href="url"}} target="_blank"><i class="icon-external-link icon-3x"></i></a>
+      {{/if}}
+      <h3 class="title">{{title}}</h3>
+    </div>
     <div class="bulletin-body">
       {{body}}
     </div>
