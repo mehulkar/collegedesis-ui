@@ -1,5 +1,9 @@
 <form class="bulletin-new" {{action 'submit' on='submit'}}>
-  {{#unless validUrl}}<span class="error">Include http or https at the beginning</span>{{/unless}}
+  {{#if validUrl}}
+    <span class="message success">Valid URL</span>
+  {{else}}
+    <span class="message error">Include http or https at the beginning</span>
+  {{/if}}
   <div class="contents">
     {{input value=url placeholder="http://"}}
     {{view Ember.Select contentBinding="possibleAuthors"

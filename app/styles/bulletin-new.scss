@@ -4,10 +4,14 @@
   select, input[type='text'], input[type='submit'] {
     display: inline-block;
   }
+  input[type='submit'] {
+    cursor: pointer;
+  }
 
   input[type='text'] {
     width: 80%;
-    max-width: 350px;
+    max-width: 450px;
+    margin-left: 5px;
   }
   select {
     width: 20%;
