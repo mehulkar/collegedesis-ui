@@ -1,16 +1,9 @@
-<form class="bulletin-new" {{action 'submit' on='submit'}}>
-  {{#if validUrl}}
-    <span class="message success">Valid URL</span>
-  {{else}}
-    <span class="message error">Include http or https at the beginning</span>
-  {{/if}}
-  <div class="contents">
-    {{input value=url placeholder="http://"}}
-    {{view Ember.Select contentBinding="possibleAuthors"
-                      prompt="Who are you?"
-                      optionValuePath="content"
-                      optionLabelPath="content.name"
-                      selectionBinding="assignedAuthor"}}
-    <input type="submit" class="cta" {{bind-attr disabled="errors"}} value="Submit">
-  </div>
+<form {{bindAttr class="validUrl:success :bulletin-new"}} {{action 'submit' on='submit'}}>
+  {{input value=url placeholder="Include http:// or https://"}}
+  {{view Ember.Select contentBinding="possibleAuthors"
+                    prompt="Who are you?"
+                    optionValuePath="content"
+                    optionLabelPath="content.name"
+                    selectionBinding="assignedAuthor"}}
+  <input type="submit" {{bind-attr disabled="errors"}} value="Submit">
 </form>

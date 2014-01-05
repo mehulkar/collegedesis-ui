@@ -1,6 +1,9 @@
 .bulletin-new {
   position: relative;
-  margin-bottom: 20px;
+  margin:20px 0;
+  &:before         { color: red;   content: "✗ "; }
+  &.success:before { color: green; content: "✓ "; }
+
   select, input[type='text'], input[type='submit'] {
     display: inline-block;
   }
