@@ -21,6 +21,10 @@ nav {
     @include logo;
   }
 
+  .title {
+    max-width: 500px;
+  }
+
   ul {
     li:first-child { padding-left: 0px; }
   }
