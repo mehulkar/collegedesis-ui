@@ -63,7 +63,7 @@ export default Ember.ArrayController.extend({
     statesString = states.join(',');
     query = this.get('searchParam');
     // TODO figure out how to configure this based on env
-    url = "http://localhost:3000/v1/organizations/search?";
+    url = window.ENV.apiURL + "/organizations/search?";
     if (states.get('length')) {
       url += "states=" + statesString;
     }
