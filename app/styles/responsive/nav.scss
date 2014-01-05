@@ -6,36 +6,7 @@
   left: 0;
 }
 
-.push-right {
-  left: 40%;
-}
-
-.left-nav {
-  width: 40%;
-  left: -40%;
-  position: fixed;
-  height: 100%;
-  background-color: transparentize(lighten($green, 10%), 0.3);
-  box-shadow: 3px 0px 5px -2px #aaa;
-  li {
-    font-size: $font-size;
-    margin-bottom: 0;
-    width: 100%;
-    text-align: center;
-    color: $brown4;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    -ie-user-select: none;
-    text-align: center;
-    padding: 10px 20px;
-    @include green;
-  }
-  &.visible { left: 0; }
-}
-
-.left-nav, .page {
+.page {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;

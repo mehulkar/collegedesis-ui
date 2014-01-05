@@ -54,19 +54,4 @@ export default Ember.Controller.extend({
   }.property('currentPath'),
 
   collegeDesisOrg: null,
-
-  leftNavVisible: false,
-
-  showNav: function() {
-    this.set('leftNavVisible', !this.get('leftNavVisible'));
-    return this.pushBody();
-  },
-
-  pushBody: function() {
-    if (this.get('leftNavVisible')) {
-      return $('.page').addClass('push-right');
-    } else {
-      return $('.page').removeClass('push-right');
-    }
-  },
 });
