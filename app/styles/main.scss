@@ -113,28 +113,7 @@ body {
   }
 }
 
-nav .logo {
-  width: 210px;
-  padding: 0 20px;
-}
-
 .page {}
-
-.logo {
-  font-family: $logo-font;
-  cursor: pointer;
-  color: $brown3;
-  span {
-    color: $brown2;
-    text-shadow: 1px 1px $brown3;
-  }
-}
-
-.index .logo {
-  font-size: $font-size * 2.2;
-  cursor: auto;
-  margin-top: 15px;
-}
 
 .info.loading { @include loader(200px); }
 
