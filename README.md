@@ -4,15 +4,28 @@ This is the UI for [collegedesis.com](//collegedesis.com). It is served up with 
 
 ## Running Locally
 
-You'll need to [install node](http://nodejs.org/) and also setup a
-local version of the [API](http://github.com/collegedesis/api).
-Working on setting up a staging API to use for development as well.
+You'll need to [install node](http://nodejs.org/).
 
 ```
-npm install -g grunt-cli
-npm install
-grunt server
+npm install -g grunt-cli bower
+npm install && bower install
+grunt server # visit http://localhost:8000
 ```
+
+#### API
+
+By default, the App points
+to a staging [API setup](http://github.com/collegedesis.com/api) at staging.collegedesis.com.
+The staging API is cleared frequently, so feel free to send POST requests.
+
+To work completely offline, you can also setup a
+local version of the [API](http://github.com/collegedesis/api).
+
+#### Future
+
+In the future, the Directory will be a separate service from the News Board.
+When that happens, this app will include the News Board API and stubs for the Directory,
+or something like that.
 
 ### About
 
