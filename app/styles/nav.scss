@@ -1,8 +1,9 @@
 @import '_imports';
+$nav-height: 36px;
 
 nav {
   width: 100%;
-  height: 36px;
+  height: $nav-height;
   box-shadow: 0 4px 4px -2px #aaa;
   background: #efefef;
   padding: 0 10px;
@@ -10,14 +11,13 @@ nav {
   & > * {
     display: inline-block;
     vertical-align: baseline;
-    height: 40px;
-    line-height: 40px;
+    height: $nav-height;
+    line-height: $nav-height;
   }
 
   .logo {
     margin-right: 20px;
     margin-bottom: 0;
-    height: 36px;
     @include logo;
   }
 
