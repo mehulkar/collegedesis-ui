@@ -12,28 +12,35 @@
   transition: all 0.3s ease;
 }
 
-nav .min-nav {
-  padding: 5px 0 0 20px;
-  display: none;
-  cursor: pointer;
-}
-
 @media screen and (max-width: 600px) {
-  nav .min-nav { display: inline-block; }
-  nav .top-nav { display: none; }
+  nav {
+    padding-left: 50px;
+    background: url('img/logo-icon.png') no-repeat;
+    background-size: 40px;
+  }
+  nav .logo { display: none; }
 }
 
 @media screen and (device-aspect-ratio: 2/3) {
-  nav .min-nav { display: inline-block; }
-  nav .top-nav { display: none; }
+  nav {
+    padding-left: 50px;
+    background-image:
+  }
+  nav .logo { display: none; }
 }
 
 @media screen and (device-aspect-ratio: 40/71) {
-  nav .min-nav { display: inline-block; }
-  nav .top-nav { display: none; }
+  nav {
+    padding-left: 50px;
+    background-image:
+  }
+  nav .logo { display: none; }
 }
 
 @media screen and (device-aspect-ratio: 3/4) {
-  nav .min-nav { display: inline-block; }
-  nav .top-nav { display: none; }
+  nav {
+    padding-left: 50px;
+    background-image:
+  }
+  nav .logo { display: none; }
 }
