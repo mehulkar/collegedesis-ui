@@ -1,14 +1,11 @@
 @import '../_imports';
 
 @media screen and (max-width: 600px) {
-  .page {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+  .outer-page { margin: 0 10px; }
   .main-inside-container {
     min-height: 290px;
   }
-  .page {
+  .outer-page {
     .index {
       text-align: center;
       margin-bottom: 40px;
@@ -28,21 +25,18 @@
   }
 
   body, p, nav,
-  .page > *, .footer {
+  .outer-page > *, .footer {
     width: 100%;
   }
 }
 
 /* iPhone < 5 Media Query */
 @media screen and (device-aspect-ratio: 2/3) {
-  .page {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+  .outer-page { margin: 0 10px; }
   .main-inside-container {
     min-height: 290px;
   }
-  .page {
+  .outer-page {
     .index {
       text-align: center;
       margin-bottom: 40px;
@@ -62,21 +56,18 @@
   }
 
   body, p, nav,
-  .page > *, .footer {
+  .outer-page > *, .footer {
     width: 100%;
   }
 }
 
 /* iPhone 5 Media Query */
 @media screen and (device-aspect-ratio: 40/71) {
-  .page {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+  .outer-page { margin: 0 10px; }
   .main-inside-container {
     min-height: 290px;
   }
-  .page {
+  .outer-page {
     .index {
       text-align: center;
       margin-bottom: 40px;
@@ -96,21 +87,18 @@
   }
 
   body, p, nav,
-  .page > *, .footer {
+  .outer-page > *, .footer {
     width: 100%;
   }
 }
 
 /* iPad 5 Media Query */
 @media screen and (device-aspect-ratio: 3/4) {
-  .page {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+  .outer-page { margin: 0 10px; }
   .main-inside-container {
     min-height: 290px;
   }
-  .page {
+  .outer-page {
     .index {
       text-align: center;
       margin-bottom: 40px;
@@ -130,7 +118,7 @@
   }
 
   body, p, nav,
-  .page > *, .footer {
+  .outer-page > *, .footer {
     width: 100%;
   }
 }
