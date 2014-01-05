@@ -45,6 +45,14 @@ export default Ember.Controller.extend({
     }
   }.property('currentPath'),
 
+  storyPage: function() {
+    if (this.get('currentPath') && this.get('currentPath').match(/news\./)) {
+      return true;
+    } else {
+      return false;
+    }
+  }.property('currentPath'),
+
   collegeDesisOrg: null,
 
   leftNavVisible: false,
@@ -60,5 +68,5 @@ export default Ember.Controller.extend({
     } else {
       return $('.page').removeClass('push-right');
     }
-  }
+  },
 });

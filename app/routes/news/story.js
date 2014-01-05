@@ -19,6 +19,7 @@ export default Ember.Route.extend({
     controller.set('newComment', this.store.createRecord('comment', {
       bulletin: model
     }));
+    this.controllerFor('application').set('currentStory', model);
   },
   afterModel: function(model) {
     var view;
