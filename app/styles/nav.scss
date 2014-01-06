@@ -7,12 +7,10 @@ nav {
   box-shadow: 0 4px 4px -2px #aaa;
   background: #efefef;
   padding: 0 10px;
-
+  position: relative;
   & > * {
     display: inline-block;
-    vertical-align: baseline;
-    height: $nav-height;
-    line-height: $nav-height;
+    vertical-align: bottom;
   }
 
   .logo {
@@ -20,33 +18,34 @@ nav {
     margin-bottom: 0;
     @include logo;
   }
-
   .title {
-    max-width: 500px;
+    width: 50%;
+    min-width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
+  .account {
+    position:absolute;
+    right: 10px;
+    top: 10px;
+    span {
+      padding: 0 10px;
+      font-size: $font-size * 0.9;
+      vertical-align: middle;
+      color: $brown4;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -o-user-select: none;
+      -ie-user-select: none;
+      text-align: center;
+      cursor: pointer;
+    }
 
-  ul {
-    li:first-child { padding-left: 0px; }
-  }
-}
-
-nav .account {
-  float:right;
-  span {
-    padding: 0 10px;
-    font-size: $font-size * 0.9;
-    vertical-align: middle;
-    color: $brown4;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    -ie-user-select: none;
-    text-align: center;
-    cursor: pointer;
-  }
-  img {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 5px;
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
   }
 }
