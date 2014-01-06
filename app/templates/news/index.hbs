@@ -7,7 +7,7 @@
     {{/link-to}}
   </div>
     <div class="subtext">
-      {{#if authorIsOrganization}}
+      {{hostName}} | {{#if authorIsOrganization}}
         {{#link-to 'directory.show' author}}{{author.name}}{{/link-to}}
       {{/if}}
       {{#if authorIsUser}}{{author.fullName}}{{/if}}

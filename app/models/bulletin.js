@@ -10,6 +10,12 @@ export default DS.Model.extend({
   score: DS.attr('number'),
   isLink: true,
 
+  hostName: function() {
+   var parser = document.createElement('a');
+   parser.href = this.get('url');
+   return parser.hostname;
+  }.property('url'),
+
   humanizedCreatedAt: function() {
     return moment(this.get('createdAt')).fromNow();
   }.property("createdAt"),

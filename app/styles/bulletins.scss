@@ -36,15 +36,11 @@
 .bulletin {
   .bulletin-info { float: left; width: 200px; }
   .bulletin-main { margin-left: 200px; }
-
-  .bulletin-info {
-    .link {
-      width: 44px;
-      color: $brown4;
-      margin-right: 10px;
-      i:hover {
-        text-shadow: 2px 1px 5px #ccc;
-      }
+  .subtext {
+    font-size: $font-size * 0.8;
+    a {
+      color: lighten($brown4, 20%);
+      text-decoration: underline;
     }
   }
   .bulletin-main {
