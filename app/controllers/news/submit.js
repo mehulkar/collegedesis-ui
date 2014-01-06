@@ -15,9 +15,9 @@ export default Ember.ObjectController.extend({
         this._assignAuthor();
 
         var self = this;
-        return this.get('content').save().then(function() {
+        return this.get('content').save().then(function(story) {
           self.createNewBulletin();
-          return self.transitionToRoute('news.story', self.get('content'));
+          return self.transitionToRoute('news.story', story);
 
         });
       }
