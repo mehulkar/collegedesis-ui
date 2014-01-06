@@ -13,6 +13,9 @@
   text-transform: capitalize;
   border: solid 1px $green;
   overflow: hidden;
+  .subtext {
+    text-transform: none;
+  }
   .subtext, .title {
     a {
       width: 100%;
@@ -38,6 +41,7 @@
   .bulletin-main { margin-left: 200px; }
   .subtext {
     font-size: $font-size * 0.8;
+    text-transform: none;
     a {
       color: lighten($brown4, 20%);
       text-decoration: underline;
