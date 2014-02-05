@@ -1,26 +1,30 @@
 export default Ember.ObjectController.extend({
   needs: ['application'],
   isEditing: false,
-  noContactInfo: (function() {
+
+  noContactInfo: function() {
     if (!this.get('website') && !this.get('facebook') && !this.get('instagram') && !this.get('youtube') && !this.get('twitter')) {
       return true;
     } else {
       return false;
     }
-  }).property('website', 'facebook', 'instagram', 'youtube', 'twitter'),
-  currentUser: (function() {
-    return this.get('controllers.application.currentUser');
-  }).property('controllers.application.currentUser'),
-  currentUserIsAdmin: (function() {
+  }.property('website', 'facebook', 'instagram', 'youtube', 'twitter'),
+
+  currentUser: Em.computed.alias('controllers.application.currentUser'),
+
+  currentUserIsAdmin: function() {
     return this.get('adminMemberships').mapProperty('user').contains(this.get('currentUser'));
-  }).property('adminMemberships.@each.user', 'currentUser'),
-  currentUserIsMember: (function() {
+  }.property('adminMemberships.@each.user', 'currentUser'),
+
+  currentUserIsMember: function() {
     return this.get('memberships').mapProperty('user').contains(this.get('currentUser'));
-  }).property('memberships.@each.user', 'currentUser'),
-  pendingAdminApplication: (function() {
+  }.property('memberships.@each.user', 'currentUser'),
+
+  pendingAdminApplication: function() {
     return this.get('pendingAdminApplications').mapProperty('user').contains(this.get('currentUser'));
-  }).property('pendingAdminApplications.@each.user', 'currentUser'),
-  currentUserStatus: (function() {
+  }.property('pendingAdminApplications.@each.user', 'currentUser'),
+
+  currentUserStatus: function() {
     if (this.get('currentUserIsAdmin')) {
       return "Administrator";
     } else {
@@ -30,17 +34,20 @@ export default Ember.ObjectController.extend({
         return "Not a member";
       }
     }
-  }).property('currentUserIsAdmin', 'currentUserIsMember'),
+  }.property('currentUserIsAdmin', 'currentUserIsMember'),
+
   actions: {
     edit: function() {
       return this.set('isEditing', true);
     },
+
     cancel: function() {
       if (this.get('isDirty')) {
         this.get('content').rollback();
       }
       return this.get('isEditing', false);
     },
+
     save: function() {
       var _this = this;
       if (!this.get('errors.length')) {
@@ -49,17 +56,19 @@ export default Ember.ObjectController.extend({
         });
       }
     },
+
     applyMembership: function() {
-      var mem_type_id;
-      mem_type_id = 1;
+      var mem_type_id = 1;
       return this.createMembershipApplication(mem_type_id);
     },
+
     applyAdmin: function() {
       var mem_type_id;
       mem_type_id = 2;
       return this.createMembershipApplication(mem_type_id);
     }
   },
+
   createMembershipApplication: function(mem_type_id) {
     var app, organization, user,
       _this = this;
@@ -79,7 +88,8 @@ export default Ember.ObjectController.extend({
       return app.get('user').reload();
     });
   },
-  errors: (function() {
+
+  errors: function() {
     var arr;
     arr = Em.A();
     if (!this.get('slugisValid')) {
@@ -95,31 +105,36 @@ export default Ember.ObjectController.extend({
       arr.push('youtube is invalid');
     }
     return arr;
-  }).property('slugisValid', 'twitterIsValid', 'facebookIsValid', 'youTubeIsValid'),
-  slugisValid: (function() {
+  }.property('slugisValid', 'twitterIsValid', 'facebookIsValid', 'youTubeIsValid'),
+
+  slugisValid: function() {
     return this.get('slug') && !this._containsSpaces(this.get('slug'));
-  }).property('slug'),
-  twitterIsValid: (function() {
+  }.property('slug'),
+
+  twitterIsValid: function() {
     if (this.get('twitter')) {
       return !this._containsSpaces(this.get('twitter'));
     } else {
       return true;
     }
-  }).property('twitter'),
-  facebookIsValid: (function() {
+  }.property('twitter'),
+
+  facebookIsValid: function() {
     if (this.get('twitter')) {
       return !this._containsSpaces(this.get('twitter'));
     } else {
       return true;
     }
-  }).property('facebook'),
-  youTubeIsValid: (function() {
+  }.property('facebook'),
+
+  youTubeIsValid: function() {
     if (this.get('youtube')) {
       return !this._containsSpaces(this.get('youtube'));
     } else {
       return true;
     }
-  }).property('youtube'),
+  }.property('youtube'),
+
   _containsSpaces: function(str) {
     if (str) {
       if (str.match(/\s+/)) {

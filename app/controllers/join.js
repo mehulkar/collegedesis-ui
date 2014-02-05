@@ -43,7 +43,7 @@ export default Ember.ObjectController.extend({
   },
 
   errors: function() {
-    var errs = []
+    var errs = [];
     // badPassword gets set on an error response from server
     if (this.get('badPassword'))    { errs.push('An account with this email exists and you entered a bad password'); }
 
