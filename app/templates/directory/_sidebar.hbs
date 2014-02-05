@@ -26,10 +26,10 @@
       <p>You applied to be an administrator. Awaiting verification!</p>
     {{else}}
       {{#unless currentUserIsAdmin}}
-        <a {{action applyAdmin}} class="cta">Claim Admin</a>
+        <a {{action 'applyAdmin'}} class="cta">Claim Admin</a>
       {{/unless}}
     {{/if}}
   {{else}}
-    <a {{action applyMembership}} class="cta">Join</a>
+    <a {{action 'applyMembership'}} class="cta">Join</a>
   {{/if}}
 </div>
