@@ -1,4 +1,4 @@
-<form {{bindAttr class="validUrl:success :bulletin-new"}} {{action 'submit' on='submit'}}>
+<form {{bind-attr class="validUrl:success :bulletin-new"}} {{action 'submit' on='submit'}}>
   {{input value=url placeholder="Include http:// or https://"}}
   {{view Ember.Select contentBinding="possibleAuthors"
                     prompt="Who are you?"
