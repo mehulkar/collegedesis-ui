@@ -1,7 +1,15 @@
 export default Ember.ObjectController.extend({
   needs: ['application'],
   comment: null,
-  savedComments: Em.computed.filterBy('comments', 'isNew', false),
+
+  savedComments: function() {
+    var comments = this.get('comments');
+    return comments.filter(function(item) {
+      if (!item.get('isNew')) {
+        return item;
+      }
+    });
+  }.property('comments.@each.isNew'),
 
   updateWindowTitle: (function() {
     var title;
