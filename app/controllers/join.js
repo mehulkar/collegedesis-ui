@@ -16,7 +16,7 @@ export default Ember.ObjectController.extend({
           password: user.get('password'),
           passwordConfirmation: user.get('passwordConfirmation'),
           fullName: user.get('fullName'),
-        }
+        };
 
         // get the API url host
         var host          = self.store.adapterFor('user').get('host');
@@ -45,13 +45,13 @@ export default Ember.ObjectController.extend({
   errors: function() {
     var errs = []
     // badPassword gets set on an error response from server
-    if (this.get('badPassword'))    { errs.push('An account with this email exists and you entered a bad password')}
+    if (this.get('badPassword'))    { errs.push('An account with this email exists and you entered a bad password'); }
 
     // these are client side computed properties
-    if (!this.get('validEmail'))    { errs.push('Not a valid email address') }
-    if (!this.get('validName'))     { errs.push('Enter a name') }
-    if (!this.get('validPassword')) { errs.push('Password should be more than 6 characters') }
-    if (!this.get('passwordMatch')) { errs.push('Password confiramtion doesn\'t match') }
+    if (!this.get('validEmail'))    { errs.push('Not a valid email address'); }
+    if (!this.get('validName'))     { errs.push('Enter a name'); }
+    if (!this.get('validPassword')) { errs.push('Password should be more than 6 characters'); }
+    if (!this.get('passwordMatch')) { errs.push('Password confiramtion doesn\'t match'); }
 
 
     return errs;
