@@ -24,7 +24,7 @@ export default Ember.ObjectController.extend({
 
   createNewComment: function() {
     var comment = this.store.createRecord('comment', {
-      bulletin: this.get('controllers.newsStory.content')
+      bulletin: this.get('controllers.news/story.content')
     });
     this.set('content', comment);
   }
