@@ -9,6 +9,7 @@ export default DS.Model.extend({
   slug: DS.attr('string'),
   score: DS.attr('number'),
   isLink: true,
+  viewsCount: DS.attr('number'),
 
   hostName: function() {
    var parser = document.createElement('a');
