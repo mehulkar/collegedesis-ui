@@ -16,6 +16,10 @@ export default Ember.Application.extend({
   }
 });
 
+// register helper
+import markdown from 'collegedesis/helpers/markdown-text';
+Ember.Handlebars.registerHelper('markdown', markdown);
+
 Ember.RSVP.configure('onerror', function(error) {
   // ensure unhandled promises raise awareness.
   // may result in false negatives, but visibility is more important
