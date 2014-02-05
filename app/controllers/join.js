@@ -2,20 +2,37 @@ export default Ember.ObjectController.extend({
   working: false,
   needs: ['application'],
 
-  submit: function() {
-    var self = this;
-    if (!this.get('errors')) {
-      this.set('working', true);
+  actions: {
+    submit: function() {
+      var self = this;
+      if (!this.get('errors')) {
+        this.set('working', true);
 
-      return this.get('model').save().then(function(results) {
-        var authManager = this.get('controllers.application.authManager');
-        authManager.authenticate(results.api_key.access_token, results.api_key.user_id);
+        // manually construct a data hash for the POST
+        var user = this.get("model");
+        var data = {
+          email: user.get('email'),
+          password: user.get('password'),
+          passwordConfirmation: user.get('passwordConfirmation'),
+          fullName: user.get('fullName'),
+        }
 
-        self.set('working', false);
-        return self.transitionToRoute('index');
+        // get the API url host
+        var host          = this.store.adapterFor('user').get('host');
+        var userCreateURL = host + '/users';
 
-      });
-    }
+        // make the request manually instead of using .save()
+        // we need to do this because the API returns an apiKey object
+        // and ember-data expects the user object.
+        $.post(userCreateURL, { user: data }, function(results) {
+          var authManager = self.get('controllers.application.authManager');
+          authManager.authenticate(results.api_key.access_token, results.api_key.user_id);
+
+          self.set('working', false);
+          return self.transitionToRoute('index');
+        });
+      }
+    },
   },
 
   errors: function() {
@@ -29,7 +46,7 @@ export default Ember.ObjectController.extend({
   validEmail: function() {
     var email = this.get('email');
 
-    if (!Ember.empty(email) && email.match(/^\S+@\S+$/)) {
+    if (!Ember.isEmpty(email) && email.match(/^\S+@\S+$/)) {
       return true;
     } else {
       return false;
@@ -41,6 +58,6 @@ export default Ember.ObjectController.extend({
   }.property('password'),
 
   passwordMatch: function() {
-    return this.get('password') === this.get("password_confirmation");
-  }.property('password', 'password_confirmation')
+    return this.get('password') === this.get("passwordConfirmation");
+  }.property('password', 'passwordConfirmation')
 });

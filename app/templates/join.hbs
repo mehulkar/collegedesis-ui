@@ -1,4 +1,4 @@
-<form id="main-form" class="index right">
+<form id="main-form" class="index right" {{action 'submit' on='submit'}}>
   <div class="row">
     <div class="header">Email</div>
     <div class="contents">
@@ -23,14 +23,14 @@
   <div class="row">
     <div class="header">Confirmation</div>
     <div class="contents">
-      {{input type='password' value=password_confirmation}}
+      {{input type='password' value=passwordConfirmation}}
       {{#unless passwordMatch}}<span class="error">does that match?</span>{{/unless}}
     </div>
   </div>
   {{#if controller.working}}
     Working...
   {{else}}
-    <button class="cta" {{bind-attr disabled="controller.errors"}} {{action submit}}>Sign up</button>
+    <input type='submit' class="cta" {{bind-attr disabled="controller.errors"}} value='Sign up'>
   {{/if}}
 </form>
 <div class="main-inside-container right">

@@ -12,11 +12,4 @@ export default Ember.Route.extend({
   activate: function(controller) {
     return $(document).attr('title', 'CollegeDesis - Signup');
   },
-
-  setupController: function(controller, model) {
-    var email;
-    controller.set('content', model);
-    email = controller.get('wipEmail');
-    return controller.set('content.email', email);
-  }
 });
