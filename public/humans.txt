@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    <collegedesis> -- <eng> -- <@collegedesis>
 
 # THANKS
 
-    <name>
+    <collegedesis>
 
 # TECHNOLOGY COLOPHON
 
