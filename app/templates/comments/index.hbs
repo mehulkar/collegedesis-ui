@@ -1,8 +1,10 @@
 <ul>
 {{#each}}
   <li>
-    <h5>{{author}}</h5>
-    <p>{{markdown-text body}}</p>
+    <img style='border-radius: 50%; box-shadow: 0 0 1px 0 #333; display:inline-block; vertical-align:top; width: 15%; max-width: 50px; margin-right:10px;' {{bind-attr src='user.imageUrl' alt='user.fullName' title='user.fullName'}} width='50'>
+    <div style='display:inline-block; vertical-align:top; width: 80%;'>
+      {{markdown-text body}}
+    </div>
   </li>
 {{/each}}
 </ul>
