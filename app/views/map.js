@@ -31,7 +31,7 @@ export default Ember.View.extend({
 
   options: function() {
     return {
-      source: '/assets/usa.svg',
+      source: '/assets/img/usa.svg',
       cursor: 'pointer',
       loadingText: 'Loading Map...',
       multiSelect: true,
