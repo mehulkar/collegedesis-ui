@@ -4,7 +4,6 @@ export default Ember.Route.extend({
 
   setupController: function(controller) {
     controller.set('authManager', AuthManager.create());
-    this._loadStatData();
     this._loadCollegeDesis();
   },
 
@@ -37,15 +36,6 @@ export default Ember.Route.extend({
       this.controller.get('authManager').reset();
       this.transitionTo('index');
     }
-  },
-
-  _loadStatData: function() {
-    var _this = this;
-    $.get('api/v1/info', function(data) {
-      _this.controller.set('numOfOrganizations', data.orgsCount);
-      _this.controller.set('numOfUniversities', data.universityCount);
-      _this.controller.set('numOfStates', data.stateCount);
-    });
   },
 
   _loadCollegeDesis: function() {
