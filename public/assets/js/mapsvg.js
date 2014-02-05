@@ -1926,9 +1926,13 @@ var mapSVG = function(elem, options){
 
 
   /** $.FN **/
-  $.fn.mapSvg = function( opts ) {
+  $.fn.mapSvg = function( id, opts ) {
 
-    var id = $(this).attr('id');
+    // monkey patched this function to recieve an element id
+    // instead of a DOM element.
+    // not sure why we are doing this. -mehulkar
+
+    // var id = $(this).attr('id');
 
     if(typeof opts == 'object' && instances[id] === undefined){
         instances[id] = new mapSVG(this, opts);
