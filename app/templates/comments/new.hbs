@@ -1,2 +1,4 @@
-{{view Ember.TextArea valueBinding="body" placeholder="Write your comment"}}
-<button class="cta" {{action submit}}>Submit</button>
+<form {{action 'submit' on='submit'}}>
+  {{input type='text' value=body placeholder='Say something about this story'}}
+  <input type='submit' class="cta" value='Submit'>
+</form>

@@ -1,5 +1,5 @@
 export default Ember.ObjectController.extend({
-  needs: ['application', 'newsStory'],
+  needs: ['application', 'news/story'],
 
   actions: {
     submit: function() {
