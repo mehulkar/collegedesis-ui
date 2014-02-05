@@ -242,25 +242,6 @@ h3, h4, h5, span.heading {
 
 form h4 { color: $brown4; }
 
-.login-form {
-  & > * {
-    font-size: $font-size * 0.9;
-    height: 20px;
-    padding: 0 5px;
-    margin: 0 5px;
-  }
-  a {
-    height: auto;
-  }
-  input {
-    width: 150px;
-  }
-  button {
-    min-width: 15px !important;
-    width: 75px !important;
-  }
-}
-
 #main-form {
   .row {
     min-height: 60px;

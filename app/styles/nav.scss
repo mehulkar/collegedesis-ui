@@ -1,5 +1,5 @@
 @import '_imports';
-$nav-height: 36px;
+$nav-height: 50px;
 
 nav {
   width: 100%;
@@ -19,8 +19,7 @@ nav {
     @include logo;
   }
   .title {
-    width: 50%;
-    min-width: 200px;
+    max-width: 30%;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -31,7 +30,6 @@ nav {
     top: 10px;
     span {
       padding: 0 10px;
-      font-size: $font-size * 0.9;
       vertical-align: middle;
       color: $brown4;
       -webkit-user-select: none;
@@ -47,5 +45,22 @@ nav {
       vertical-align: middle;
       margin-right: 5px;
     }
+  }
+}
+
+.login-form {
+  & > * {
+    font-size: $font-size;
+    padding: 0 5px;
+    margin: 0 5px;
+  }
+  a {
+    height: auto;
+  }
+  input {
+    width: 150px;
+  }
+  input[type='submit'] {
+    width: 100px;
   }
 }
