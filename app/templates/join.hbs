@@ -1,36 +1,39 @@
 <form id="main-form" class="index right" {{action 'submit' on='submit'}}>
+  {{#if errors.length}}
+  <ul class='errors'>
+    {{#each errors}}
+      <li class='error'>{{this}}</li>
+    {{/each}}
+  </ul>
+  {{/if}}
   <div class="row">
     <div class="header">Email</div>
     <div class="contents">
       {{input type='email' value=email}}
-      {{#unless validEmail}}<span class="error">Use your own email</span>{{/unless}}
     </div>
   </div>
   <div class="row">
     <div class="header">Full Name</div>
     <div class="contents">
       {{input value=fullName}}
-      <span class="error">and your own name</span>
     </div>
   </div>
   <div class="row">
     <div class="header">Password</div>
     <div class="contents">
       {{input type='password' value=password}}
-      {{#unless validPassword}}<span class="error">at least six characters</span>{{/unless}}
     </div>
   </div>
   <div class="row">
     <div class="header">Confirmation</div>
     <div class="contents">
       {{input type='password' value=passwordConfirmation}}
-      {{#unless passwordMatch}}<span class="error">does that match?</span>{{/unless}}
     </div>
   </div>
   {{#if controller.working}}
     Working...
   {{else}}
-    <input type='submit' class="cta" {{bind-attr disabled="controller.errors"}} value='Sign up'>
+    <input type='submit' class="cta" value='Sign up'>
   {{/if}}
 </form>
 <div class="main-inside-container right">

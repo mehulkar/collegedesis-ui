@@ -5,11 +5,12 @@ export default Ember.ObjectController.extend({
   actions: {
     submit: function() {
       var self = this;
-      if (!this.get('errors')) {
-        this.set('working', true);
+      if (!self.get('errors.length')) {
+        self.set('working', true);
+        self.set("badPassword", true);
 
         // manually construct a data hash for the POST
-        var user = this.get("model");
+        var user = self.get("model");
         var data = {
           email: user.get('email'),
           password: user.get('password'),
@@ -18,7 +19,7 @@ export default Ember.ObjectController.extend({
         }
 
         // get the API url host
-        var host          = this.store.adapterFor('user').get('host');
+        var host          = self.store.adapterFor('user').get('host');
         var userCreateURL = host + '/users';
 
         // make the request manually instead of using .save()
@@ -30,14 +31,31 @@ export default Ember.ObjectController.extend({
 
           self.set('working', false);
           return self.transitionToRoute('index');
+        }).fail(function(error) {
+          self.set('badPassword', true);
+          self.set('password', null);
+          self.set('passwordConfirmation', null);
+          $('#main-form input[type="password"]')[0].focus();
+          self.set("working", false);
         });
       }
     },
   },
 
   errors: function() {
-    return !(this.get("validName") && this.get('validEmail') && this.get('validPassword') && this.get('passwordMatch'));
-  }.property('validName', 'validEmail', 'passwordMatch'),
+    var errs = []
+    // badPassword gets set on an error response from server
+    if (this.get('badPassword'))    { errs.push('An account with this email exists and you entered a bad password')}
+
+    // these are client side computed properties
+    if (!this.get('validEmail'))    { errs.push('Not a valid email address') }
+    if (!this.get('validName'))     { errs.push('Enter a name') }
+    if (!this.get('validPassword')) { errs.push('Password should be more than 6 characters') }
+    if (!this.get('passwordMatch')) { errs.push('Password confiramtion doesn\'t match') }
+
+
+    return errs;
+  }.property('validName', 'validEmail', 'passwordMatch', 'badPassword'),
 
   validName: function() {
     return this.get('fullName.length');

@@ -188,6 +188,12 @@ h3, h4, h5, span.heading {
 
 .footer { height: 70px; }
 
+.error {
+  color: red;
+  font-size: 0.8em;
+  &:before { content: "✗ "; }
+}
+
 .message {
   font-size: $font-size * 0.7;
   &.error {
