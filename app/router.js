@@ -13,6 +13,8 @@ Router.map(function() {
 
   this.route('join');
   this.route('me');
+  this.route('about');
+  this.route('guidelines');
 
   this.resource('users', function() {
     this.route('new', {path: 'join'});

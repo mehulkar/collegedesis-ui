@@ -5,7 +5,11 @@
     {{#if storyPage}}
       {{currentStory.title}}
     {{else}}
-      News from {{numOfOrganizations}} South Asian student organizations all around America
+      {{#if aboutPage}}
+        About
+      {{else}}
+        News from {{numOfOrganizations}} South Asian student organizations all around America
+      {{/if}}
     {{/if}}
   </div>
 

@@ -15,6 +15,8 @@ nav {
 
   .logo {
     width: 210px;
+    min-width: 210px;
+    margin-right: 12px;
     margin-bottom: 0;
     @include logo;
   }
@@ -23,6 +25,7 @@ nav {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    margin-bottom: 5px;
   }
   .account {
     position:absolute;

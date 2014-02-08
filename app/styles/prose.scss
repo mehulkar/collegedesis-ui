@@ -1,0 +1,51 @@
+@import '_imports';
+
+
+.prose {
+  min-height: 200px;
+  & > * { margin: 0 auto; }
+  pre {
+    background-color: #bababa;
+    padding: 5px;
+    color: white;
+    width: 400px;
+    overflow: scroll;
+  }
+  hr {
+    border-bottom: solid 1px $brown2;
+  }
+  p {
+    line-height: $font-size * 1.5;
+    margin-bottom: $font-size * 1.5;
+  }
+  img {
+    max-width: 95%;
+    box-shadow: 0px 0px 3px #aaa;
+    display: block;
+    margin: 0 auto 10px;
+  }
+  iframe {
+    width: 100%;
+    height: 350px;
+  }
+  & > * {
+    margin-bottom: 10px;
+  }
+  ol, ul {
+    margin-left: 40px;
+  }
+  ul li {
+    list-style-type: square;
+  }
+  ol li {
+    list-style-type: decimal;
+  }
+
+  blockquote {
+    margin-left: 30px;
+    border-left:solid 3px transparentize($brown2, 0.5);
+    padding: 0 10px;
+    font-style: italic;
+    max-width: 500px;
+  }
+}
