@@ -14,6 +14,6 @@ export default Ember.ObjectController.extend({
   updateWindowTitle: (function() {
     var title;
     title = this.get("content.title");
-    return $(document).attr('title', "" + title + " - CollegeDesis Radio");
+    return $(document).attr('title', "" + title);
   }).observes('content')
 });
