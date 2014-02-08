@@ -2,14 +2,15 @@
   <div class="logo" {{action goHome}}><span>College</span>Desis</div>
 
   <div class="title muted">
+
     {{#if storyPage}}
       {{currentStory.title}}
     {{else}}
-      {{#if aboutPage}}
-        About
+      {{#if staticPage}}{{staticPage}}
       {{else}}
-        News from {{numOfOrganizations}} South Asian student organizations all around America
+      News from {{numOfOrganizations}} South Asian student organizations all around America
       {{/if}}
+
     {{/if}}
   </div>
 

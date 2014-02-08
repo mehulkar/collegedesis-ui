@@ -53,10 +53,13 @@ export default Ember.Controller.extend({
     }
   }.property('currentPath'),
 
-  aboutPage: function() {
-    if (this.get('homePage')) { return false; }
-    return this.get('currentPath') === 'about';
-  }.property('currentPath'),
+  staticPage: function() {
+    if (this.get('homePage'))      { return false; }
+    if (this.get('newsPage'))      { return false; }
+    if (this.get('directoryPage')) { return false; }
+
+    return this.get('currentPath').capitalize();
+  }.property('currentPath', 'homePage'),
 
   collegeDesisOrg: null,
 });
