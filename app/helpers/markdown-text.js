@@ -2,9 +2,11 @@
 // https://github.com/evilstreak/markdown-js
 // bower install markdown --save
 
-var markdown = require('collegedesis/markdown');
+var showdown = require('collegedesis/showdown');
+var showdown_youtube = require('collegedesis/showdown-youtube');
 
 export default Ember.Handlebars.makeBoundHelper(function(value) {
   if (Ember.isEmpty(value)) return "";
-  return new Ember.Handlebars.SafeString(window.markdown.toHTML(value));
+  var converter = new showdown.default.converter({ extensions: ['youtube'] });
+  return new Ember.Handlebars.SafeString(converter.makeHtml(value));
 });
