@@ -38,7 +38,7 @@ export default Ember.Controller.extend({
   }.property('currentPath'),
 
   directoryPage: function() {
-    if (this.get('currentPath') && this.get('currentPath').match(/d\./)) {
+    if (this.get('currentPath') && this.get('currentPath').match(/directory\./)) {
       return true;
     } else {
       return false;
