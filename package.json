@@ -15,8 +15,7 @@
   "scripts": {
     "start": "grunt server",
     "build": "grunt build:debug",
-    "test": "grunt test:ci",
-    "postinstall": "bower cache clean; bower install -q; grunt dist"
+    "test": "grunt test:ci"
   },
   "repository": {
     "type": "git",
@@ -24,7 +23,7 @@
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "express": "~3.4.2",
     "lockfile": "~>0.3.0",
     "bower": "~1.2.7",
@@ -51,9 +50,7 @@
     "loom-generators-ember-appkit": "~1.0.2",
     "originate": "~0.1.5",
     "loom": "~3.1.2",
-    "grunt-sass": "~0.9.0"
-  },
-  "devDependencies": {
+    "grunt-sass": "~0.9.0",
     "time-grunt": "~0.2.9"
   }
 }
