@@ -75,7 +75,7 @@ module.exports = {
       expand: true,
       cwd: 'dist',
       src: ['**'],
-      dest: 'heroku/'
+      dest: 'heroku/public'
     }]
   },
 };

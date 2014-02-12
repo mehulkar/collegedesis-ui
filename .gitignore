@@ -19,4 +19,5 @@
 .DS_Store
 Thumbs.db
 /coverage/*
-/heroku
+
+heroku/public/
