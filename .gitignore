@@ -1,8 +1,11 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# compiled output
+# compiled output and caches
 /dist
 /tmp
+.bower-cache
+.bower-tmp
+.sass-cache
 
 # dependencies
 /node_modules
