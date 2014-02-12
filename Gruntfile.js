@@ -77,7 +77,8 @@ module.exports = function(grunt) {
                      'clean:dist',
                      'build:dist',
                      'copy:assemble',
-                     'createDistVersion'
+                     'createDistVersion',
+                     'copy:heroku'
                      ]);
 
 
