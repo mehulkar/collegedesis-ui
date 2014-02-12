@@ -69,4 +69,13 @@ module.exports = {
       dest: 'dist/'
     }]
   },
+
+   heroku: {
+    files: [{
+      expand: true,
+      cwd: 'dist',
+      src: ['**'],
+      dest: 'heroku/'
+    }]
+  },
 };
