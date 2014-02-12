@@ -1,5 +1,7 @@
+var path = require('path');
+
 var connect = require('connect'),
-  directory = 'public',
+  directory = path.join(__dirname, 'public'),
   port = 8000;
 
 connect()
