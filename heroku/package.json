@@ -1,0 +1,11 @@
+{
+  "name": "collegedesis-news-dist",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "connect": "~2.12.0"
+  }
+}
