@@ -5,4 +5,4 @@
 //
 // window.ENV.public_key = '123456'
 
-window.ENV.apiURL = 'https://api.collegedesis.com';
+window.ENV.apiURL = 'https://www.api.collegedesis.com';
