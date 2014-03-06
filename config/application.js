@@ -1,4 +1,10 @@
 //= require jquery
+//= require jquery.cookie
+//= require mapsvg
+//= require moment
+//= require raphael
+//= require showdown
+//= require showdown-youtube
 //= require environment
 //= require ember-appkit
 //= require_self
