@@ -71,6 +71,7 @@ GEM
     parser (2.1.7)
       ast (~> 1.1)
       slop (~> 3.4, >= 3.4.5)
+    pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -104,7 +105,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sqlite3 (1.3.9)
     thin (1.6.1)
       daemons (>= 1.0.9)
       eventmachine (>= 1.0.0)
@@ -127,8 +127,8 @@ PLATFORMS
 DEPENDENCIES
   ember-appkit-rails
   jquery-rails
+  pg
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)
-  sqlite3
   thin
   uglifier (>= 1.3.0)
