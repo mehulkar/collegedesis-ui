@@ -1,4 +1,6 @@
-var Router = Ember.Router.extend();
+var Router = Ember.Router.extend({
+  location: 'history',
+});
 
 Router.map(function() {
   this.resource('news', function() {
@@ -22,11 +24,6 @@ Router.map(function() {
   });
 
   this.route('applicationresponse', {path: 'application-response/:id'});
-});
-
-
-Router.reopen({
-  location: 'history',
 });
 
 export default Router;
