@@ -1,0 +1,1 @@
+define("config/adapters/application",["exports"],function(e){"use strict";e["default"]=DS.ActiveModelAdapter.extend({host:window.config.api})});

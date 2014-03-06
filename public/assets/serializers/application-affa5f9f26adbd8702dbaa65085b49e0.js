@@ -1,0 +1,1 @@
+define("config/serializers/application",["exports"],function(e){"use strict";e["default"]=DS.ActiveModelSerializer.extend({serializeAttribute:function(e,i,t,r){return r.options.readOnly?void 0:this._super(e,i,t,r)}})});
