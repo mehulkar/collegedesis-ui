@@ -1,3 +1,0 @@
-[submodule "heroku"]
-	path = heroku
-	url = git@heroku.com:collegedesis-news.git
