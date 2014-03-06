@@ -1,4 +1,4 @@
 export default DS.ActiveModelAdapter.extend({
   namespace: 'api/v<%= Rails.application.config.ember.api_version %>',
-  host: window.ENV.apiURL
+  host: window.config.api
 });

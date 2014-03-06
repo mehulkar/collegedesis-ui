@@ -1,4 +1,4 @@
-import AuthManager from 'collegedesis/utils/auth_manager';
+import AuthManager from 'app/utils/auth_manager';
 
 export default Ember.Route.extend({
 
