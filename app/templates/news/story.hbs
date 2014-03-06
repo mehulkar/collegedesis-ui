@@ -6,9 +6,10 @@
     {{#if authorIsUser}}{{author.fullName}}{{/if}}
   </h5>
   <h5>Posted {{humanizedCreatedAt}}</h5>
-  <h6 style='color:#aaa;'>{{viewsCount}} Views</h6>
+  <h6>{{viewsCount}} Views</h6>
   {{#if authorIsOrganization}}
-    <section {{bind-attr class=":links :animated isEditing:fadeOutRight"}}>
+    <section class='links'>
+      <h5>More from {{#link-to 'directory.show' author}}{{author.name}}{{/link-to}}:</h5>
       {{social-link href=author.websiteUrl iconClasses="icon-large icon-globe"}}
       {{social-link href=author.facebookUrl iconClasses="icon-large icon-facebook"}}
       {{social-link href=author.twitterUrl iconClasses="icon-large icon-twitter"}}

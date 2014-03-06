@@ -30,7 +30,7 @@
 
 body .links {
   margin: 10px 0;
-  & > * { display: inline-block; margin-right: 10px;}
+  & > div { display: inline-block; margin-right: 10px;}
   i { color: #ccc; }
   a {
     i { color: $brown4; }

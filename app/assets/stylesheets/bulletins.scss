@@ -37,7 +37,17 @@
 }
 
 .bulletin {
-  .bulletin-info { float: left; width: 200px; }
+  .bulletin-info {
+    float: left;
+    width: 200px;
+    h6 {
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+    .links h5 {
+      margin-bottom: 15px;
+    }
+  }
   .bulletin-main { margin-left: 200px; }
   .subtext {
     font-size: $font-size * 0.8;
