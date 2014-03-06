@@ -1452,5 +1452,3 @@ if (typeof define === 'function' && define.amd) {
         return Showdown;
     });
 }
-
-export default Showdown;
