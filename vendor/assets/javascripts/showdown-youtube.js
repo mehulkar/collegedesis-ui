@@ -29,7 +29,7 @@
   };
 
   // Client-side export
-  if (typeof window !== 'undefined' && window.Showdown && window.Showdown.extensions) { window.Showdown.extensions.twitter = youtube; }
+  if (typeof window !== 'undefined' && window.Showdown && window.Showdown.extensions) { window.Showdown.extensions.youtube = youtube; }
   // Server-side export
   if (typeof module !== 'undefined') module.exports = youtube;
 
