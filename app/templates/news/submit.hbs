@@ -1,9 +1,17 @@
-<form {{bind-attr class="validUrl:success :bulletin-new"}} {{action 'submit' on='submit'}}>
-  {{input value=url placeholder="Include http:// or https://"}}
-  {{view Ember.Select contentBinding="possibleAuthors"
-                    prompt="Who are you?"
-                    optionValuePath="content"
-                    optionLabelPath="content.name"
-                    selectionBinding="assignedAuthor"}}
-  <input type="submit" {{bind-attr disabled="errors"}} value="Submit">
+<form class="bulletin-new" {{action 'submit' on='submit'}}>
+  <div class='column'>
+    <h2>Share link:</h2>
+    <ul class='submit-errors'>
+      {{#each errors}}<li {{bind-attr class='this.success::error'}}>{{this.msg}}</li>{{/each}}
+    </ul>
+  </div>
+  <div class='column'>
+    {{input value=url placeholder="Include http:// or https://"}}
+    {{view Ember.Select contentBinding="possibleAuthors"
+                      prompt="Who are you?"
+                      optionValuePath="content"
+                      optionLabelPath="content.name"
+                      selectionBinding="assignedAuthor"}}
+    <input type="submit" {{bind-attr disabled="formHasErrors"}} value="Submit">
+  </div>
 </form>

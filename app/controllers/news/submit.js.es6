@@ -10,10 +10,8 @@ export default Ember.ObjectController.extend({
   actions: {
     submit: function() {
 
-      if (!this.get('errors')) {
-
+      if (!this.get('formHasErrors')) {
         this._assignAuthor();
-
         var self = this;
         return this.get('content').save().then(function(story) {
           self.createNewBulletin();
@@ -76,8 +74,23 @@ export default Ember.ObjectController.extend({
   },
 
   errors: function() {
-    return !(this.get('assignedAuthor') && this.get('url') && this.get('validUrl'));
-  }.property('assignedAuthor', 'title', 'url', 'validUrl'),
+    return [
+      {msg: 'Enter a valid URL',  success: this.get('validUrl')},
+      {msg: 'Pick an author',     success: this.get('assignedAuthor')}
+    ]
+  }.property('assignedAuthor', 'validUrl'),
+
+  formHasErrors: function() {
+    var falsies = [null, undefined, false];
+    var successes = this.get('errors').map(function(err) {
+      if (falsies.contains(err.success)) {
+        return false
+      } else {
+        return true
+      }
+    });
+    return successes.contains(false);
+  }.property('errors.@each.success'),
 
   validUrl: function() {
     return this.get('urlIncludesProtocol') && !this.get('urlIsShortened');

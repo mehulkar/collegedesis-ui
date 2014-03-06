@@ -1,23 +1,42 @@
 .bulletin-new {
   position: relative;
-  margin:20px 0;
-  &:before         { color: red;   content: "✗ "; }
-  &.success:before { color: green; content: "✓ "; }
+  margin: 0 0 20px;
+  padding: 20px 0;
+  border-bottom: solid #eee 1px;
+
+  .column {
+    display: inline-block;
+    vertical-align: top;
+    &:first-child { width: 10%; min-width: 120px; }
+    &:last-child  { width: 80%; }
+  }
 
   select, input[type='text'], input[type='submit'] {
-    display: inline-block;
+    display: block;
+    margin: 0 0 10px;
   }
-  input[type='submit'] {
-    cursor: pointer;
+
+  input[type='text'], select {
+    height: 40px;
+    box-shadow: 0;
+    border: solid 1px #ccc;
+    border-radius: 5px;
   }
 
   input[type='text'] {
-    width: 80%;
-    max-width: 450px;
     margin-left: 5px;
+    max-width: 100%;
   }
   select {
     width: 20%;
     min-width: 200px;
   }
+
+  .submit-errors {
+    color: red;
+    font-size: 0.8em;
+    li        { color: green; &:before { content: "✓ ";} }
+    li.error  { color: red;   &:before { content: "✗ ";} }
+  }
+
 }

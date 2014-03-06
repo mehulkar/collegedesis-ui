@@ -123,7 +123,7 @@ input, textarea, select {
 }
 
 @mixin input {
-  box-shadow: 0 0 3px #333;
+  // box-shadow: 0 0 3px #333;
   outline: none;
   border: none;
   background-color: transparentize($brown2, 0.9);
