@@ -9,13 +9,13 @@
 <section class="control">
 {{#if currentUserIsAdmin}}
   {{#if isEditing}}
-    <a class="small" {{action save}}>Save</a>
+    <a class="small" {{action 'save'}}>Save</a>
     <!-- TODO: Do Good CSS later -->
     &nbsp;&nbsp;&nbsp;
-    <a class="small muted" {{action cancel}}>Cancel</a>
+    <a class="small muted" {{action 'cancel'}}>Cancel</a>
     {{#each msg in errors}}<p style="color: red;">{{msg}}</p>{{/each}}
   {{else}}
-    <a class="small" {{action edit}}>Edit</a>
+    <a class="small" {{action 'edit'}}>Edit</a>
   {{/if}}
 {{/if}}
 </section>

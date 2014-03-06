@@ -4,7 +4,7 @@
       <div class="search icon"></div>
       {{input value=controllers.map.searchParam autocomplete="off"}}
     </div>
-    <button style="visibility:hidden;" {{action search target='controllers.map'}}>Search</button>
+    <button style="visibility:hidden;" {{action 'search' target='controllers.map'}}>Search</button>
   </form>
   <div class="map-results">
     <ul {{bind-attr class="controllers.map.loading"}}>
