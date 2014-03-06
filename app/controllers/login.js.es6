@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
         session: this.getProperties('email', 'password')
       };
 
-      var url = window.ENV.apiURL;
+      var url = window.config.api;
 
       Ember.$.post(url + '/sessions', data, function(results) {
         var authManager = self.get('controllers.application.authManager');
