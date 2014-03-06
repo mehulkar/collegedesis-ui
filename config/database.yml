@@ -5,3 +5,10 @@ production:
   pool: 5
   username: collegedesis
   password:
+development:
+  adapter: postgresql
+  encoding: unicode
+  database:
+  pool: 5
+  username: 
+  password:
