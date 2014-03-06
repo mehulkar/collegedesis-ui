@@ -1,5 +1,5 @@
-import User from 'collegedesis/models/user';
-import ApiKey from 'collegedesis/models/api_key';
+import User from 'app/models/user';
+import ApiKey from 'app/models/api-key';
 
 export default Ember.Object.extend({
 
