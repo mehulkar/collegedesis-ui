@@ -4,7 +4,6 @@ export default Ember.Route.extend({
 
   setupController: function(controller) {
     controller.set('authManager', AuthManager.create());
-    console.log('yummy');
     this._loadCollegeDesis();
   },
 
