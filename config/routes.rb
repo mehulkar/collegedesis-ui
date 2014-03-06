@@ -55,5 +55,5 @@ News::Application.routes.draw do
   #   end
 
   # Uncomment when using 'history' as the location in Ember's router
-  # get '*foo', :to => 'landing#index'
+  get '*foo', :to => 'landing#index'
 end

@@ -1,14 +1,32 @@
-var Router = Ember.Router.extend({
-  // Uncomment to change Ember's router to use the 
-  // HTML5 History API
-  // Please note that not all browsers support this!
-  // You will also need to uncomment the greedy route matcher
-  // in config/routes.rb
-
-  // location: 'history'
-});
+var Router = Ember.Router.extend();
 
 Router.map(function() {
+  this.resource('news', function() {
+    this.route('story', {path: ':slug'});
+    this.route('submit');
+  });
+
+  this.resource('directory', function() {
+    this.route('index', {path: '/'});
+    this.route('show', {path: ':slug'});
+  });
+
+  this.route('join');
+  this.route('me');
+  this.route('about');
+  this.route('guidelines');
+
+  this.resource('users', function() {
+    this.route('new', {path: 'join'});
+    this.route('me');
+  });
+
+  this.route('applicationresponse', {path: 'application-response/:id'});
+});
+
+
+Router.reopen({
+  location: 'history',
 });
 
 export default Router;
