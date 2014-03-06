@@ -14,21 +14,3 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
-# Legacy EAK ignores
-bak/dist
-bak/tmp
-bak.bower-cache
-bak.bower-tmp
-bak.sass-cache
-# dependencies
-bak/node_modules
-bak/vendor/*
-bak!/vendor/loader.js
-# misc
-bak/.sass-cache
-bak/connect.lock
-bak/libpeerconnection.log
-bak.DS_Store
-bakThumbs.db
-bak/coverage/*

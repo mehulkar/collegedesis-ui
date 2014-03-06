@@ -1,0 +1,20 @@
+{
+  "name": "fakehr",
+  "version": "0.0.1",
+  "main": [
+    "./fakehr.js"
+  ],
+  "dependencies": {
+    "FakeXMLHttpRequest": "*"
+  },
+  "homepage": "https://github.com/trek/fakehr",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "3f563c300ea9f116c6269e16cf502f5a485688fa"
+  },
+  "_source": "git://github.com/trek/fakehr.git",
+  "_target": "*",
+  "_originalSource": "fakehr"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "ember-testing-httpRespond",
+  "version": "0.1.1",
+  "main": [
+    "./httpRespond-1.1.js"
+  ],
+  "dependencies": {
+    "FakeXMLHttpRequest": "*",
+    "fakehr": "*"
+  },
+  "homepage": "https://github.com/trek/ember-testing-httpRespond",
+  "_release": "0.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.1",
+    "commit": "8a9f7e899aeefdb35b40751a789d3126a7674afb"
+  },
+  "_source": "git://github.com/trek/ember-testing-httpRespond.git",
+  "_target": "~0.1.1",
+  "_originalSource": "ember-testing-httpRespond"
+}
