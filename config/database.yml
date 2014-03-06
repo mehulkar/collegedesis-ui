@@ -1,4 +1,7 @@
 production:
   adapter: postgresql
   encoding: unicode
+  database: whatever
   pool: 5
+  username: collegedesis
+  password:
