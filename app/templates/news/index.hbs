@@ -7,10 +7,14 @@
     {{/link-to}}
   </div>
     <div class="subtext">
-      {{hostName}} | {{#if authorIsOrganization}}
+      <p><a {{bind-attr href="url"}} target="_blank"><i class="icon-external-link icon"></i> {{hostName}}</a>
+      </p>
+      <p>
+      {{#if authorIsOrganization}}
         {{#link-to 'directory.show' author}}{{author.name}}{{/link-to}}
       {{/if}}
       {{#if authorIsUser}}{{author.fullName}}{{/if}}
+      </p>
     </div>
   </div>
 {{/each}}
