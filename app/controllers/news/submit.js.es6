@@ -3,20 +3,14 @@ export default Ember.ObjectController.extend({
 
   currentUser: Em.computed.alias('controllers.application.currentUser'),
 
-  showPreview: false,
-
-  showingPreview: Em.computed.alias('showPreview'),
-
   actions: {
     submit: function() {
-
       if (!this.get('formHasErrors')) {
         this._assignAuthor();
         var self = this;
         return this.get('content').save().then(function(story) {
           self.createNewBulletin();
           return self.transitionToRoute('story', story);
-
         });
       }
     }

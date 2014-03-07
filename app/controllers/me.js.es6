@@ -2,8 +2,7 @@ export default Ember.ObjectController.extend({
   needs: ['application'],
 
   deleteMembership: function(mem) {
-    var org;
-    org = mem.get('organization.name');
+    var org = mem.get('organization.name');
     if (window.confirm("Are you sure you want to remove your membership from " + org + "?")) {
       mem.deleteRecord();
       return mem.save();

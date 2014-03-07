@@ -9,12 +9,10 @@ export default Ember.Controller.extend({
   }.property('authManager.apiKey.access_token'),
 
   routeChanged: function() {
-    if (!window._gaq) {
-      return;
-    }
+    if (!window._gaq) { return; }
+
     return Em.run.next(function() {
-      var page;
-      page = window.location.hash.length > 0 ? window.location.hash.substring(1) : window.location.pathname;
+      var page = window.location.hash.length > 0 ? window.location.hash.substring(1) : window.location.pathname;
       return window._gaq.push(['_trackPageview', page]);
     });
   }.observes('currentPath'),
@@ -25,12 +23,6 @@ export default Ember.Controller.extend({
 
   currentYear: function() {
     return (new Date()).getFullYear();
-  }.property(),
-
-  firstPage: function() {
-    return {
-      page: '1'
-    };
   }.property(),
 
   homePage: function() {
