@@ -11,7 +11,7 @@ export default Ember.Route.extend({
 
   actions: {
     goToBulletin: function(bulletin) {
-      return this.transitionTo('news.story', bulletin);
+      return this.transitionTo('story', bulletin);
     }
   }
 });

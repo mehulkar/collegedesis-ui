@@ -1,5 +1,5 @@
 export default Ember.ObjectController.extend({
-  needs: ['application', 'news/story'],
+  needs: ['application', 'story'],
 
   actions: {
     submit: function() {
@@ -24,7 +24,7 @@ export default Ember.ObjectController.extend({
 
   createNewComment: function() {
     var comment = this.store.createRecord('comment', {
-      bulletin: this.get('controllers.news/story.content')
+      bulletin: this.get('controllers.story.content')
     });
     this.set('content', comment);
   }

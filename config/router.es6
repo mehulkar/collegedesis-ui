@@ -3,10 +3,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('news', function() {
-    this.route('story', {path: ':slug'});
-    this.route('submit');
-  });
+  this.route('story', {path: ':slug'});
 
   this.resource('directory', function() {
     this.route('index', {path: '/'});

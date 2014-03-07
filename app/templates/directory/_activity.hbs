@@ -3,7 +3,7 @@
   {{#if bulletins}}
     <ul>
       {{#each bulletin in bulletins}}
-      <li class="small">{{#link-to 'news.story' bulletin}}{{bulletin.title}}{{/link-to}}</li>
+      <li class="small">{{#link-to 'story' bulletin}}{{bulletin.title}}{{/link-to}}</li>
       {{/each}}
     </ul>
   {{else}}
