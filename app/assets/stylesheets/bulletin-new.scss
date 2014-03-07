@@ -33,8 +33,6 @@
   }
 
   .submit-errors {
-    color: red;
-    font-size: 0.8em;
     li        { color: green; &:before { content: "✓ ";} }
     li.error  { color: red;   &:before { content: "✗ ";} }
   }

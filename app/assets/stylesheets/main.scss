@@ -35,12 +35,6 @@ p, li {
   line-height: $font-size * 1.30;
 }
 
-.small {
-  font-size: $font-size * 0.9;
-  margin-bottom: $font-size * 0.9 * 1.30;
-  line-height: $font-size * 0.9 * 1.30;
-}
-
 .muted {
   color: lighten($brown4, 30%);
 }
@@ -188,9 +182,14 @@ h3, h4, h5, span.heading {
 
 .footer { height: 70px; }
 
+.small {
+  font-size: $font-size * 0.7;
+  margin-bottom: $font-size * 0.7 * 1.30;
+  line-height: $font-size * 0.7 * 1.30;
+}
+
 .error {
   color: red;
-  font-size: 0.8em;
   &:before { content: "✗ "; }
 }
 
