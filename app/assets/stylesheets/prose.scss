@@ -34,6 +34,10 @@
   ol, ul {
     margin-left: 40px;
   }
+  & > ul > li, & > ol > li {
+    margin-bottom: $font-size * 1.5;
+    p:last-child { margin-bottom: 0; }
+  }
   ul li {
     list-style-type: square;
   }
