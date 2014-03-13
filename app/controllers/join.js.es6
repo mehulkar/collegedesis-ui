@@ -11,11 +11,12 @@ export default Ember.ObjectController.extend({
 
         // manually construct a data hash for the POST
         var user = self.get("model");
+
         var data = {
           email: user.get('email'),
           password: user.get('password'),
-          passwordConfirmation: user.get('passwordConfirmation'),
-          fullName: user.get('fullName'),
+          password_confirmation: user.get('passwordConfirmation'),
+          full_name: user.get('fullName'),
         };
 
         // get the API url host
