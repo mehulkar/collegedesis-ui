@@ -1,7 +1,7 @@
 <form class="bulletin-new" {{action 'submit' on='submit'}}>
   <div class='column'>
     <h2>Share link:</h2>
-    <ul class='submit-errors'>
+    <ul class='form-errors'>
       {{#each errors}}<li {{bind-attr class='this.success::error :small'}}>{{this.msg}}</li>{{/each}}
     </ul>
     <p class='small'>{{#link-to 'faq'}}FAQs{{/link-to}}</p>

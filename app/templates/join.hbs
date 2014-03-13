@@ -1,9 +1,7 @@
 <form id="main-form" class="index right" {{action 'submit' on='submit'}}>
-  {{#if errors.length}}
-  <ul class='submit-errors'>
+  <ul class='form-errors'>
     {{#each errors}}<li {{bind-attr class='this.success::error :small'}}>{{this.msg}}</li>{{/each}}
   </ul>
-  {{/if}}
   <div class="row">
     <div class="header">Email</div>
     <div class="contents">
