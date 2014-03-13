@@ -31,10 +31,4 @@
     width: 20%;
     min-width: 200px;
   }
-
-  .submit-errors {
-    li        { color: green; &:before { content: "✓ ";} }
-    li.error  { color: red;   &:before { content: "✗ ";} }
-  }
-
 }

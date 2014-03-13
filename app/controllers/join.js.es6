@@ -5,9 +5,12 @@ export default Ember.ObjectController.extend({
   actions: {
     submit: function() {
       var self = this;
-      if (!self.get('errors.length')) {
-        self.set('working', true);
-        self.set("badPassword", true);
+      if (!self.get('formHasErrors')) {
+        this.setProperties({
+          authSuccess: null,
+          authErrorMsg: null,
+          working: true,
+        });
 
         // manually construct a data hash for the POST
         var user = self.get("model");
@@ -26,37 +29,69 @@ export default Ember.ObjectController.extend({
         // make the request manually instead of using .save()
         // we need to do this because the API returns an apiKey object
         // and ember-data expects the user object.
-        $.post(userCreateURL, { user: data }, function(results) {
+
+        Ember.$.post(userCreateURL, { user: data })
+        .done(function(results) {
           var authManager = self.get('controllers.application.authManager');
           authManager.authenticate(results.api_key.access_token, results.api_key.user_id);
 
           self.set('working', false);
           return self.transitionToRoute('index');
-        }).fail(function(error) {
-          self.set('badPassword', true);
-          self.set('password', null);
-          self.set('passwordConfirmation', null);
+        })
+        .error(function(response) {
+          self.setProperties({
+            authSuccess: false,
+            authErrorMsg: response.responseText,
+            password: null,
+            passwordConfirmation: null,
+            working: false
+          });
+
           $('#main-form input[type="password"]')[0].focus();
-          self.set("working", false);
         });
       }
     },
   },
 
+  authSuccess: null,
+  authErrorMsg: null,
+
+  resetAuthSuccess: function() {
+    if (this.get('password.length') && this.get('authSuccess') === false) {
+      this.setProperties({
+        authSuccess: null,
+        authErrorMsg: null
+      });
+    }
+  }.observes('password'),
+
   errors: function() {
-    var errs = [];
-    // badPassword gets set on an error response from server
-    if (this.get('badPassword'))    { errs.push('An account with this email exists and you entered a bad password'); }
-
-    // these are client side computed properties
-    if (!this.get('validEmail'))    { errs.push('Not a valid email address'); }
-    if (!this.get('validName'))     { errs.push('Enter a name'); }
-    if (!this.get('validPassword')) { errs.push('Password should be more than 6 characters'); }
-    if (!this.get('passwordMatch')) { errs.push('Password confiramtion doesn\'t match'); }
-
-
+    var errs = [
+      {msg: 'Enter a valid email address',                success: this.get('validEmail')},
+      {msg: 'Enter your name',                            success: this.get('validName')},
+      {msg: 'Password should be more than 6 characters',  success: this.get('validPassword')},
+      {msg: 'Confirm password',                           success: this.get('passwordMatch')},
+    ]
+    if (this.get('authSuccess') === false) {
+      errs.pushObject({
+        msg: this.get('authErrorMsg'),
+        success: this.get('authSuccess')}
+      )
+    }
     return errs;
-  }.property('validName', 'validEmail', 'passwordMatch', 'badPassword'),
+  }.property('validName', 'validEmail', 'validPassword', 'passwordMatch'),
+
+  formHasErrors: function() {
+    var falsies = [null, undefined, false];
+    var successes = this.get('errors').map(function(err) {
+      if (falsies.contains(err.success)) {
+        return false
+      } else {
+        return true
+      }
+    });
+    return successes.contains(false);
+  }.property('errors.@each.success'),
 
   validName: function() {
     return this.get('fullName.length');

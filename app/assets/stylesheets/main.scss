@@ -188,6 +188,11 @@ h3, h4, h5, span.heading {
   line-height: $font-size * 0.7 * 1.30;
 }
 
+.submit-errors {
+  li        { color: green; &:before { content: "✓ ";} }
+  li.error  { color: red;   &:before { content: "✗ ";} }
+}
+
 .error {
   color: red;
   &:before { content: "✗ "; }

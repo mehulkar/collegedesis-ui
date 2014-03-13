@@ -1,9 +1,7 @@
 <form id="main-form" class="index right" {{action 'submit' on='submit'}}>
   {{#if errors.length}}
-  <ul class='errors'>
-    {{#each errors}}
-      <li class='error'>{{this}}</li>
-    {{/each}}
+  <ul class='submit-errors'>
+    {{#each errors}}<li {{bind-attr class='this.success::error :small'}}>{{this.msg}}</li>{{/each}}
   </ul>
   {{/if}}
   <div class="row">
@@ -33,7 +31,7 @@
   {{#if controller.working}}
     Working...
   {{else}}
-    <input type='submit' class="cta" value='Sign up'>
+    <input type="submit" class='cta' {{bind-attr disabled="formHasErrors"}} value="Sign up">
   {{/if}}
 </form>
 <div class="main-inside-container right">
@@ -41,5 +39,4 @@
   <p>
     Earn reputation for your team, fundraise for events, and connect with South Asian students from all around America.
   </p>
-  <p class="small muted">Learn <a href="n/how-to-sign-up">how to register</a>.</p>
 </div>
