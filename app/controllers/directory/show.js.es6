@@ -45,7 +45,7 @@ export default Ember.ObjectController.extend({
       if (this.get('isDirty')) {
         this.get('content').rollback();
       }
-      return this.get('isEditing', false);
+      return this.set('isEditing', false);
     },
 
     save: function() {
