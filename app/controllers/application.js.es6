@@ -1,5 +1,10 @@
 export default Ember.Controller.extend({
 
+  lastBuild: function() {
+    var raw = $("meta[property='last-build']")[0]['content'];
+    return moment(raw).fromNow();
+  }.property(),
+
   currentUser: function() {
     return this.get('authManager.apiKey.user');
   }.property('authManager.apiKey.user'),

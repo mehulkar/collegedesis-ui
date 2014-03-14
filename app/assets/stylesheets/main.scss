@@ -346,3 +346,10 @@ section {
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
+.stamp {
+  strong {background-color: transparent;}
+  position: absolute;
+  bottom: 1px;
+  right: 10px;
+}
