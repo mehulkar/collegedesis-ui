@@ -1,4 +1,4 @@
-import AuthManager from 'app/utils/auth-manager';
+import AuthManager from 'news/utils/auth-manager';
 
 export default Ember.Route.extend({
 

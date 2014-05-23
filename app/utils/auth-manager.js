@@ -1,5 +1,5 @@
-import User from 'app/models/user';
-import ApiKey from 'app/models/api-key';
+import User from 'news/models/user';
+import ApiKey from 'news/models/api-key';
 
 export default Ember.Object.extend({
 
