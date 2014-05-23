@@ -37,7 +37,7 @@ export default Em.View.extend({
     }
   },
 
-  keyUp: function(event) {
+  keyUp: function() {
     if (this.get("plaintext")) {
       return this.set("value", this.$().text());
     } else {

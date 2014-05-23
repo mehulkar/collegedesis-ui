@@ -9,7 +9,7 @@ export default Ember.Route.extend({
     return this.store.createRecord('user');
   },
 
-  activate: function(controller) {
+  activate: function() {
     return $(document).attr('title', 'CollegeDesis - Signup');
   },
 });

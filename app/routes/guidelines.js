@@ -1,5 +1,5 @@
 export default Ember.Route.extend({
-  activate: function(controller) {
+  activate: function() {
     return $(document).attr('title', 'CollegeDesis - Guidelines');
   },
 });

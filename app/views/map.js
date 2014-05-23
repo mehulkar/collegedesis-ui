@@ -8,10 +8,6 @@ export default Ember.View.extend({
   },
 
   regionClickHandler: function(event, map) {
-    var stateElement = event.currentTarget,
-        state = stateElement.getAttribute('id'),
-        fill = stateElement.getAttribute('fill').toUpperCase();
-
     var selected = map.getSelected();
     this.get('controller').updateSelectedStates(selected);
   },

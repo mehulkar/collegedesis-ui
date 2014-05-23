@@ -71,16 +71,16 @@ export default Ember.ObjectController.extend({
     return [
       {msg: 'Enter a valid URL',  success: this.get('validUrl')},
       {msg: 'Pick an author',     success: this.get('assignedAuthor')}
-    ]
+    ];
   }.property('assignedAuthor', 'validUrl'),
 
   formHasErrors: function() {
     var falsies = [null, undefined, false];
     var successes = this.get('errors').map(function(err) {
       if (falsies.contains(err.success)) {
-        return false
+        return false;
       } else {
-        return true
+        return true;
       }
     });
     return successes.contains(false);

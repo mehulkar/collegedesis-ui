@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     controller.set('newBulletin', this.store.createRecord('bulletin'));
   },
 
-  activate: function(controller) {
+  activate: function() {
     return $(document).attr('title', 'CollegeDesis');
   },
 

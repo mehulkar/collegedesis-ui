@@ -70,13 +70,14 @@ export default Ember.ObjectController.extend({
   },
 
   createMembershipApplication: function(mem_type_id) {
-    var app, organization, user,
-      _this = this;
+    var app, organization, user;
+
     user = this.get('currentUser');
     if (!user) {
       return void 0;
     }
     organization = this.get('content');
+
     app = this.store.createRecord('membershipApplication', {
       user: user,
       organization: organization,

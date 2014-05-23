@@ -1,4 +1,3 @@
-import User from 'news/models/user';
 import ApiKey from 'news/models/api-key';
 
 export default Ember.Object.extend({
@@ -28,11 +27,13 @@ export default Ember.Object.extend({
     var store = App.__container__.lookup('store:main');
 
     var self = this;
-    var user = store.find('user', userId).then(function(user) {
+
+    store.find('user', userId).then(function(user) {
       var apiKey = ApiKey.create({
         accessToken: accessToken,
         user: user
       });
+
       self.set('apiKey', apiKey);
     });
   },
